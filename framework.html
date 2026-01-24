@@ -1,0 +1,172 @@
+---
+layout: default
+title: Cognitive Awareness Framework
+---
+
+<div class="page-header">
+  <div class="container">
+    <h1>Cognitive Awareness Framework</h1>
+    <p>Understanding and moderating cognitively addictive content patterns</p>
+  </div>
+</div>
+
+<div class="container doc-content">
+  <h2 id="introduction">Introduction: The Need for Cognitive Awareness</h2>
+  
+  <p>The modern digital environment is defined by a relentless competition for user attention. To succeed, content platforms and creators have evolved a sophisticated toolkit of "hooks" (techniques to stop scrolling) and "themes" (content genres that sustain engagement) designed to trigger deep-seated psychological mechanisms.</p>
+
+  <p>While this has led to highly engaging content, it has also fostered an ecosystem of "mindless scrolling," digital addiction, and a loss of user agency. Users can feel trapped by algorithms that feed them content not because it is fulfilling, but because it is effective at holding their attention.</p>
+
+  <p>This document proposes a system to understand, identify, and selectively moderate these social media patterns and themes.</p>
+
+  <p>The foundation of this system is the set of taxonomies for <a href="https://github.com/fixsocialmedia/ressource-list/blob/main/taxonomies/social-media-hooks.json" target="_blank">Social Media Hooks</a> (the 1-3 second "snare") and <a href="https://github.com/fixsocialmedia/ressource-list/blob/main/taxonomies/cognitively-addictive-themes.json" target="_blank">Cognitively Addictive Themes</a> (the long-form "loop"). These taxonomies provide a structured, machine-readable language to describe how content captures our attention, moving beyond simple topic-based keywords.</p>
+
+  <h2 id="rationale">Rationale: From Topics to Mechanisms</h2>
+
+  <p>Current content filters are primitive. They allow users to block topics (e.g., keywords like "politics," "crypto") but not mechanisms. This is a critical flaw. A user may be interested in a nuanced political discussion but wish to avoid content designed to make them outraged.</p>
+
+  <p>This system's rationale is to acknowledge and target the cognitive mechanisms used to foster addictive engagement.</p>
+
+  <p>By classifying content using the provided taxonomies, we can empower users with granular control:</p>
+
+  <ul>
+    <li><strong>Blocking Hooks:</strong> A user could choose to filter out content that begins with a <code>provocation_controversy</code> hook (e.g., "Unpopular opinion..."), reducing their exposure to "rage-bait" and manufactured conflict.</li>
+    <li><strong>Moderating Themes:</strong> A user could rate-limit their consumption of <code>low_cognitive_load</code> themes (e.g., "Brainrot," "Sludge Content") to encourage more mindful consumption, or limit <code>transformation_renovation</code> content if they find it's making them feel dissatisfied with their own home.</li>
+  </ul>
+
+  <p>This shifts control from the platform's algorithm (which optimizes for watch time) to the user (who can optimize for digital well-being).</p>
+
+  <h2 id="key-features">Key Features</h2>
+
+  <div class="features-grid" style="margin-top: 2rem;">
+    <div class="feature">
+      <h3>🎯 Social Media Hooks Taxonomy</h3>
+      <p>Identifies the 1-3 second "snare" techniques used to stop scrolling and capture initial attention.</p>
+    </div>
+    
+    <div class="feature">
+      <h3>🔄 Cognitively Addictive Themes</h3>
+      <p>Categorizes content genres that create sustained engagement and "binge-watching" behavior.</p>
+    </div>
+    
+    <div class="feature">
+      <h3>📋 Machine-Readable Format</h3>
+      <p>JSON taxonomies designed for technical integration into browser extensions and mobile apps.</p>
+    </div>
+    
+    <div class="feature">
+      <h3>🛠️ Creator Tools</h3>
+      <p>Framework for building script linters and content analysis tools for creators.</p>
+    </div>
+    
+    <div class="feature">
+      <h3>⚙️ User Empowerment</h3>
+      <p>Enables granular content filtering based on psychological mechanisms, not just topics.</p>
+    </div>
+    
+    <div class="feature">
+      <h3>🔍 Research Foundation</h3>
+      <p>Provides a structured framework for studying and understanding social media patterns.</p>
+    </div>
+  </div>
+
+  <h2 id="use-cases">Use Cases</h2>
+
+  <ul>
+    <li><strong>Browser Extensions:</strong> Selective content filtering based on hooks and themes</li>
+    <li><strong>Mobile Accessibility:</strong> Extensions for mobile platforms to improve digital well-being</li>
+    <li><strong>Content Creation Tools:</strong> Script linters to help creators understand engagement patterns</li>
+    <li><strong>Platform Features:</strong> Digital well-being features integrated into social media platforms</li>
+    <li><strong>Research & Analysis:</strong> Academic study of social media patterns and their effects</li>
+    <li><strong>Policy Development:</strong> Framework for understanding and regulating addictive design patterns</li>
+  </ul>
+
+  <h2 id="taxonomies">Taxonomies</h2>
+
+  <h3>Social Media Hooks</h3>
+  <p>The Social Media Hooks taxonomy identifies techniques used in the first 1-3 seconds of content to capture attention and stop scrolling. These include:</p>
+  
+  <ul>
+    <li>Pattern interrupts (unexpected visuals or sounds)</li>
+    <li>Provocations and controversies</li>
+    <li>Emotional triggers</li>
+    <li>Curiosity gaps</li>
+    <li>Social proof indicators</li>
+  </ul>
+
+  <p><a href="https://github.com/fixsocialmedia/ressource-list/blob/main/taxonomies/social-media-hooks.json" class="btn btn-primary" target="_blank">View Social Media Hooks Taxonomy →</a></p>
+
+  <h3>Cognitively Addictive Themes</h3>
+  <p>The Cognitively Addictive Themes taxonomy categorizes content genres that sustain engagement over longer periods. These include:</p>
+  
+  <ul>
+    <li>Low cognitive load content ("brain rot")</li>
+    <li>Transformation and renovation content</li>
+    <li>Deep dives and explainers</li>
+    <li>ASMR and sensory content</li>
+    <li>Viral challenges and trends</li>
+  </ul>
+
+  <p><a href="https://github.com/fixsocialmedia/ressource-list/blob/main/taxonomies/cognitively-addictive-themes.json" class="btn btn-primary" target="_blank">View Cognitively Addictive Themes Taxonomy →</a></p>
+
+  <h2 id="limitations">Limitations & Challenges</h2>
+
+  <h3>Technical Detection</h3>
+  <ul>
+    <li><strong>Text vs. Media:</strong> Identifying patterns from text (titles, scripts) using regex triggers is feasible. However, many hooks and themes are purely audio-visual.</li>
+    <li><strong>Client-Side Burden:</strong> True detection requires sophisticated, on-device NLP and video/audio analysis (ML models), which is computationally expensive.</li>
+  </ul>
+
+  <h3>Subjectivity & Nuance</h3>
+  <ul>
+    <li>One person's "addictive" theme is another's "relaxation." The system must be a highly personalized tool, not a universal censor.</li>
+    <li><strong>Intent:</strong> The taxonomy identifies the format, but not the intent or veracity of the information within it.</li>
+  </ul>
+
+  <h3>The "Arms Race"</h3>
+  <p>As soon as patterns are identified and filtered, creators and platforms will evolve new, more subtle patterns to bypass detection. This system would require constant maintenance and taxonomy updates, likely fueled by a crowdsourced community.</p>
+
+  <h3>Platform & Data Access</h3>
+  <p>This system requires deep access to a user's content feed, which platforms actively obstruct. An "Accessibility extension" is a clever workaround, but it's fragile and prone to breaking with every app update.</p>
+
+  <h2 id="implementation">Implementation Approach</h2>
+
+  <p>A phased implementation approach is recommended:</p>
+
+  <ol>
+    <li><strong>Phase 1:</strong> Text-based detection using regex triggers for titles and descriptions</li>
+    <li><strong>Phase 2:</strong> Browser extension prototype for desktop platforms</li>
+    <li><strong>Phase 3:</strong> Mobile accessibility extension development</li>
+    <li><strong>Phase 4:</strong> Machine learning models for audio-visual pattern detection</li>
+    <li><strong>Phase 5:</strong> Community-driven taxonomy maintenance and updates</li>
+  </ol>
+
+  <h2 id="for-developers">For Developers</h2>
+
+  <p>The taxonomies are designed to be machine-readable and easy to integrate into your applications:</p>
+
+  <pre><code>{
+  "hook_id": "pattern_interrupt",
+  "name": "Pattern Interrupt",
+  "description": "Unexpected visual or audio element that breaks scrolling rhythm",
+  "regex_triggers": ["^POV:", "^Wait for it", "^Watch this"],
+  "severity": "medium"
+}</code></pre>
+
+  <p>Developers can use these taxonomies to:</p>
+  <ul>
+    <li>Build content filtering extensions</li>
+    <li>Create analytics tools for content creators</li>
+    <li>Implement digital well-being features</li>
+    <li>Conduct research on engagement patterns</li>
+  </ul>
+
+  <div class="cta-section" style="margin-top: 3rem; border-radius: 8px;">
+    <h2>Get Involved</h2>
+    <p>Help us improve the framework and build better tools for digital well-being</p>
+    <div class="cta-buttons">
+      <a href="{{ '/contributing' | relative_url }}" class="btn btn-primary btn-large">Contribute</a>
+      <a href="https://github.com/fixsocialmedia/ressource-list" class="btn btn-outline btn-large" target="_blank">View on GitHub</a>
+    </div>
+  </div>
+</div>

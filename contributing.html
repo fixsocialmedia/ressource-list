@@ -1,0 +1,209 @@
+---
+layout: default
+title: Contributing
+---
+
+<div class="page-header">
+  <div class="container">
+    <h1>Contributing Guide</h1>
+    <p>Help us build a better social media ecosystem</p>
+  </div>
+</div>
+
+<div class="container doc-content">
+  <p>Thank you for your interest in contributing to the Fix Social Media Resource List! This guide will help you get started.</p>
+
+  <h2 id="ways-to-contribute">Ways to Contribute</h2>
+
+  <div class="features-grid" style="margin-top: 2rem;">
+    <div class="feature">
+      <h3>📝 Add Resources</h3>
+      <p>Share tools, extensions, or resources you've found useful for improving social media quality.</p>
+    </div>
+    
+    <div class="feature">
+      <h3>🔄 Update Entries</h3>
+      <p>Keep information current and accurate by updating existing resource entries.</p>
+    </div>
+    
+    <div class="feature">
+      <h3>📚 Improve Documentation</h3>
+      <p>Enhance guides, fix typos, or clarify instructions in our documentation.</p>
+    </div>
+    
+    <div class="feature">
+      <h3>🐛 Report Issues</h3>
+      <p>Let us know about broken links, outdated information, or other problems.</p>
+    </div>
+    
+    <div class="feature">
+      <h3>💡 Suggest Improvements</h3>
+      <p>Share ideas for better organization, new categories, or enhanced features.</p>
+    </div>
+    
+    <div class="feature">
+      <h3>🧠 Expand Taxonomies</h3>
+      <p>Contribute to the cognitive awareness framework by suggesting new hooks or themes.</p>
+    </div>
+  </div>
+
+  <h2 id="before-you-start">Before You Start</h2>
+
+  <ol>
+    <li><strong>Search first</strong> - Check if the resource already exists in the <a href="{{ '/resources' | relative_url }}">Resources</a> page</li>
+    <li><strong>Verify quality</strong> - Ensure the resource is legitimate, functional, and relevant</li>
+    <li><strong>Test if possible</strong> - Try the tool or extension yourself before submitting</li>
+    <li><strong>Check licensing</strong> - Prefer open-source and well-licensed resources</li>
+  </ol>
+
+  <h2 id="how-to-add-resource">How to Add a Resource</h2>
+
+  <h3>Step 1: Fork and Clone</h3>
+
+  <pre><code># Fork the repository on GitHub, then:
+git clone https://github.com/YOUR-USERNAME/ressource-list.git
+cd ressource-list
+git checkout -b add-resource-name</code></pre>
+
+  <h3>Step 2: Add Your Resource</h3>
+
+  <ol>
+    <li>Open <code>RESOURCES.md</code></li>
+    <li>Find the appropriate category (or suggest a new one)</li>
+    <li>Add your resource following the existing table format</li>
+    <li>Include all required information:
+      <ul>
+        <li><strong>Name:</strong> The official name of the tool/resource</li>
+        <li><strong>Description:</strong> A brief, clear description (1-2 sentences)</li>
+        <li><strong>Platform/Browser:</strong> Supported platforms or browsers</li>
+        <li><strong>Link:</strong> Official website or repository URL</li>
+        <li><strong>License</strong> (if applicable): Open source license type</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h3>Step 3: Follow Formatting Guidelines</h3>
+
+  <ul>
+    <li>Use proper markdown table syntax</li>
+    <li>Keep descriptions concise (under 100 characters preferred)</li>
+    <li>Use HTTPS links when available</li>
+    <li>Alphabetize entries within categories when possible</li>
+    <li>Maintain consistent formatting with existing entries</li>
+  </ul>
+
+  <h3>Step 4: Commit and Push</h3>
+
+  <pre><code>git add RESOURCES.md
+git commit -m "Add [Resource Name] to [Category]"
+git push origin add-resource-name</code></pre>
+
+  <h3>Step 5: Create a Pull Request</h3>
+
+  <ol>
+    <li>Go to your fork on GitHub</li>
+    <li>Click "New Pull Request"</li>
+    <li>Provide a clear title and description</li>
+    <li>Wait for review and feedback</li>
+  </ol>
+
+  <h2 id="resource-criteria">Resource Quality Criteria</h2>
+
+  <p>We accept resources that meet these criteria:</p>
+
+  <ul>
+    <li>✅ <strong>Functional:</strong> The tool/resource is actively maintained and working</li>
+    <li>✅ <strong>Relevant:</strong> Directly related to improving social media quality or digital well-being</li>
+    <li>✅ <strong>Safe:</strong> No malware, tracking, or privacy concerns</li>
+    <li>✅ <strong>Accessible:</strong> Free or has a free tier/version available</li>
+    <li>✅ <strong>Well-documented:</strong> Has clear documentation or instructions</li>
+    <li>✅ <strong>Open source preferred:</strong> Open source projects are given priority</li>
+  </ul>
+
+  <h2 id="taxonomy-contributions">Contributing to Taxonomies</h2>
+
+  <p>You can also contribute to our cognitive awareness framework taxonomies:</p>
+
+  <h3>Adding a New Hook or Theme</h3>
+
+  <ol>
+    <li>Review the existing taxonomies in the <code>taxonomies/</code> directory</li>
+    <li>Identify a missing pattern or technique</li>
+    <li>Add your entry following the JSON schema</li>
+    <li>Provide clear descriptions and examples</li>
+    <li>Include regex triggers where applicable</li>
+    <li>Submit a pull request with your addition</li>
+  </ol>
+
+  <h3>Example Taxonomy Entry</h3>
+
+  <pre><code>{
+  "id": "new_hook_id",
+  "name": "Hook Name",
+  "description": "Clear description of the attention-capture technique",
+  "category": "category_name",
+  "regex_triggers": [
+    "^Pattern 1",
+    "Pattern 2"
+  ],
+  "examples": [
+    "Example 1",
+    "Example 2"
+  ],
+  "severity": "low|medium|high"
+}</code></pre>
+
+  <h2 id="code-of-conduct">Code of Conduct</h2>
+
+  <p>All contributors are expected to follow our <a href="https://github.com/fixsocialmedia/ressource-list/blob/main/CODE_OF_CONDUCT.md" target="_blank">Code of Conduct</a>. Key points:</p>
+
+  <ul>
+    <li>Be respectful and inclusive</li>
+    <li>Welcome newcomers and help them learn</li>
+    <li>Focus on constructive feedback</li>
+    <li>Respect different viewpoints and experiences</li>
+    <li>Accept responsibility for mistakes</li>
+  </ul>
+
+  <h2 id="review-process">Review Process</h2>
+
+  <p>After submitting a pull request:</p>
+
+  <ol>
+    <li><strong>Automated Checks:</strong> Your PR will be checked for formatting and conflicts</li>
+    <li><strong>Community Review:</strong> Other contributors may provide feedback</li>
+    <li><strong>Maintainer Review:</strong> A maintainer will review and approve or request changes</li>
+    <li><strong>Merge:</strong> Once approved, your contribution will be merged</li>
+  </ol>
+
+  <p>Please be patient during the review process. We're all volunteers working to make social media better!</p>
+
+  <h2 id="recognition">Recognition</h2>
+
+  <p>All contributors are recognized for their work:</p>
+
+  <ul>
+    <li>Your GitHub profile will be listed in the repository contributors</li>
+    <li>Significant contributions may be highlighted in release notes</li>
+    <li>You'll be part of a community working to improve digital well-being</li>
+  </ul>
+
+  <h2 id="questions">Questions or Help Needed?</h2>
+
+  <p>If you have questions or need help:</p>
+
+  <ul>
+    <li>📖 Check the <a href="https://github.com/fixsocialmedia/ressource-list" target="_blank">repository README</a></li>
+    <li>💬 Open a <a href="https://github.com/fixsocialmedia/ressource-list/discussions" target="_blank">GitHub Discussion</a></li>
+    <li>🐛 Report issues in the <a href="https://github.com/fixsocialmedia/ressource-list/issues" target="_blank">issue tracker</a></li>
+  </ul>
+
+  <div class="cta-section" style="margin-top: 3rem; border-radius: 8px;">
+    <h2>Ready to Contribute?</h2>
+    <p>Join us in building better tools for digital well-being</p>
+    <div class="cta-buttons">
+      <a href="https://github.com/fixsocialmedia/ressource-list" class="btn btn-primary btn-large" target="_blank">Go to GitHub</a>
+      <a href="{{ '/resources' | relative_url }}" class="btn btn-outline btn-large">Browse Resources</a>
+    </div>
+  </div>
+</div>
