@@ -1,0 +1,41 @@
+# Site settings
+title: "Fix Social Media - Resource List"
+description: "A curated collection of tools and resources to improve social media quality and combat AI-generated content"
+baseurl: "/ressource-list"
+url: "https://fixsocialmedia.github.io"
+
+# Build settings
+markdown: kramdown
+theme: null
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+
+# Exclude from processing
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
+  - node_modules
+  - vendor
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: Resources
+    url: /resources
+  - title: Framework
+    url: /framework
+  - title: Contributing
+    url: /contributing
+  - title: About
+    url: /about
+
+# Additional settings
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
