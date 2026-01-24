@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "last_updated": "2025-10-18T14:00:00Z",
+  "last_updated": "2026-01-24T09:34:00Z",
   "notes_for_adoption": "This taxonomy categorizes content themes known for high user retention and 'addictive' properties. Use 'psychological_driver' for educational tooltips and 'warnings' for content linters.",
   "categories": {
     "process_and_completion": {

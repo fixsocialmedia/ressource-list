@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "last_updated": "2025-10-18T13:48:00Z",
+  "last_updated": "2026-01-24T09:34:00Z",
   "notes_for_adoption": "This taxonomy categorizes social media hooks for use in content creation tools. Use 'regex_triggers' to provide real-time suggestions on script drafts. Use 'warnings' to power a linter or helper tool for creators.",
   "categories": {
     "emotional": {
@@ -115,7 +115,7 @@
           ],
           "regex_triggers": [
             "/(so i was|and then he said)/i",
-            "/(wait, what\\?|hold on)/i"
+            "/(wait, what|hold on)/i"
           ],
           "warnings": [
             "Can be confusing if not resolved quickly.",
