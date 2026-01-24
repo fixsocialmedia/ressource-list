@@ -1,0 +1,369 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2025-10-18T13:48:00Z",
+  "notes_for_adoption": "This taxonomy categorizes social media hooks for use in content creation tools. Use 'regex_triggers' to provide real-time suggestions on script drafts. Use 'warnings' to power a linter or helper tool for creators.",
+  "categories": {
+    "emotional": {
+      "id": "emotional",
+      "name": "Emotional Hooks (Targeting Affect)",
+      "description": "Hooks that aim to elicit an immediate and strong emotional response.",
+      "hooks": [
+        {
+          "id": "provocation_controversy",
+          "category_id": "emotional",
+          "name": "Provocation & Controversy",
+          "description": "Starting with a deliberately divisive or challenging statement (a 'hot take') that opposes a common belief.",
+          "examples": [
+            "You're building your business all wrong.",
+            "Unpopular opinion: [Commonly loved thing] is overrated.",
+            "Stop doing this if you want to succeed."
+          ],
+          "regex_triggers": [
+            "/(unpopular opinion|hot take)/i",
+            "/(you're .* wrong|stop doing this)/i",
+            "/(why .* is overrated|is a lie|is dead)/i"
+          ],
+          "warnings": [
+            "High risk of attracting negative comments.",
+            "Can alienate parts of your audience.",
+            "May damage brand reputation if overused or inauthentic."
+          ],
+          "icon_path": "/icons/emotional/provocation.svg"
+        },
+        {
+          "id": "empathy_vulnerability",
+          "category_id": "emotional",
+          "name": "Empathy & Vulnerability",
+          "description": "Showing raw, unfiltered emotion or admitting a personal failure or secret.",
+          "examples": [
+            "Storytime: The moment I got fired.",
+            "I have to tell you something...",
+            "My biggest failure..."
+          ],
+          "regex_triggers": [
+            "/(storytime|story time)/i",
+            "/(i got fired|i failed|my biggest failure|my biggest regret)/i",
+            "/(i need to be honest|a secret about|i'm embarrassed to admit)/i"
+          ],
+          "warnings": [
+            "Requires genuine vulnerability; can backfire if perceived as fake.",
+            "Risk of oversharing personal details.",
+            "Can be emotionally draining to create."
+          ],
+          "icon_path": "/icons/emotional/vulnerability.svg"
+        },
+        {
+          "id": "outrage_injustice",
+          "category_id": "emotional",
+          "name": "Outrage & Injustice",
+          "description": "Tapping into a shared sense of frustration or a perceived injustice; often framed as a 'rant'.",
+          "examples": [
+            "They are lying to you about...",
+            "I can't be the only one who's sick of this.",
+            "This is a total scam."
+          ],
+          "regex_triggers": [
+            "/(they are lying|it's a lie|is a scam)/i",
+            "/(i can't be the only one|am i the only one)/i",
+            "/(i'm sick of|i hate this|this is unacceptable)/i"
+          ],
+          "warnings": [
+            "Fosters negativity and polarized audiences.",
+            "Can be factually inaccurate if based purely on emotion.",
+            "Risk of being seen as a 'complainer'."
+          ],
+          "icon_path": "/icons/emotional/outrage.svg"
+        }
+      ]
+    },
+    "cognitive": {
+      "id": "cognitive",
+      "name": "Cognitive & Curiosity Hooks",
+      "description": "Hooks that pose a question or create an information gap that the viewer feels compelled to resolve.",
+      "hooks": [
+        {
+          "id": "knowledge_gap",
+          "category_id": "cognitive",
+          "name": "The Knowledge Gap",
+          "description": "Implying the viewer is missing crucial or secret information.",
+          "examples": [
+            "This is the one secret to [Goal] that no one is talking about.",
+            "You won't believe what I just found out.",
+            "Here's why you're always tired."
+          ],
+          "regex_triggers": [
+            "/(the secret to|the #1 secret)/i",
+            "/(what no one tells you|what they don't want you to know)/i",
+            "/(here's why|this is why)/i",
+            "/(you won't believe)/i"
+          ],
+          "warnings": [
+            "Classic clickbait; can annoy users if the payoff isn't good.",
+            "Must deliver on the 'secret' or lose trust."
+          ],
+          "icon_path": "/icons/cognitive/gap.svg"
+        },
+        {
+          "id": "pattern_interrupt",
+          "category_id": "cognitive",
+          "name": "The Pattern Interrupt",
+          "description": "Starting *in media res* (in the middle of the action) or with a non-sequitur that breaks scrolling hypnosis.",
+          "examples": [
+            "[Starts mid-sentence]",
+            "[Throws object at camera]",
+            "[Bizarre or out-of-context opening shot]"
+          ],
+          "regex_triggers": [
+            "/(so i was|and then he said)/i",
+            "/(wait, what\\?|hold on)/i"
+          ],
+          "warnings": [
+            "Can be confusing if not resolved quickly.",
+            "Relies heavily on strong editing or performance.",
+            "May not be suitable for all topics."
+          ],
+          "icon_path": "/icons/cognitive/interrupt.svg",
+          "notes_for_devs": "This hook is often detected by analyzing video/audio (e.g., sudden scene change, loud noise at t=0, or unusual grammar) rather than just text."
+        },
+        {
+          "id": "quantified_promise",
+          "category_id": "cognitive",
+          "name": "The Quantified Promise (Listicle)",
+          "description": "Promising a specific, digestible number of insights or tips.",
+          "examples": [
+            "3 ways to fix your sleep schedule.",
+            "The #1 mistake people make when...",
+            "5 apps I can't live without."
+          ],
+          "regex_triggers": [
+            "/^[0-9]+ (ways|tips|hacks|reasons|mistakes|apps|tools)/i",
+            "/(the #1|the one) (mistake|reason|thing)/i"
+          ],
+          "warnings": [
+            "Can feel generic or low-effort.",
+            "The content must match the number promised and deliver real value for each point."
+          ],
+          "icon_path": "/icons/cognitive/listicle.svg"
+        }
+      ]
+    },
+    "sensory": {
+      "id": "sensory",
+      "name": "Sensory Hooks",
+      "description": "Hooks that use satisfying or jarring audio-visual stimuli to create a physical or sensory reaction.",
+      "hooks": [
+        {
+          "id": "asmr",
+          "category_id": "sensory",
+          "name": "ASMR",
+          "description": "Using quiet, 'tingly' sounds like whispering, tapping, or crinkling.",
+          "examples": [
+            "[Whispering]",
+            "[Tapping on mic]",
+            "[Crinkling paper]"
+          ],
+          "regex_triggers": [
+            "/\\[(whisper|whispering|tapping|crinkling)\\]/i",
+            "/(#asmr|asmr video)/i"
+          ],
+          "warnings": [
+            "Niche audience; can be unpleasant for those who dislike ASMR.",
+            "Requires a high-quality microphone and controlled recording environment."
+          ],
+          "icon_path": "/icons/sensory/asmr.svg",
+          "notes_for_devs": "Best detected by audio analysis (low decibels, specific frequencies) combined with text triggers."
+        },
+        {
+          "id": "oddly_satisfying",
+          "category_id": "sensory",
+          "name": "Oddly Satisfying",
+          "description": "Showing perfect processes, symmetry, transformation, or clean destruction.",
+          "examples": [
+            "[Paint mixing]",
+            "[Kinetic sand cutting]",
+            "[Hydraulic press]",
+            "[Perfect handwriting]"
+          ],
+          "regex_triggers": [
+            "/(oddly satisfying|so satisfying)/i",
+            "/(#satisfying|#oddlysatisfying)/i",
+            "/\\[(paint mixing|sand cutting)\\]/i"
+          ],
+          "warnings": [
+            "Relies 100% on high-quality, stable visuals.",
+            "Can be very time-consuming to film and set up."
+          ],
+          "icon_path": "/icons/sensory/satisfying.svg",
+          "notes_for_devs": "Primarily a visual-only hook. Text triggers are often in the description, not the hook itself."
+        },
+        {
+          "id": "dynamic_motion",
+          "category_id": "sensory",
+          "name": "Dynamic Motion",
+          "description": "Using fast camera movements, a dramatic physical action, or rapid cuts to grab the eye.",
+          "examples": [
+            "[Camera 'swoosh']",
+            "[Dropping an item]",
+            "[Fast-paced editing]"
+          ],
+          "regex_triggers": [
+            "/\\[(swoosh|zoom in|fast cuts)\\]/i"
+          ],
+          "warnings": [
+            "Can be disorienting if overdone.",
+            "Requires good editing skills."
+          ],
+          "icon_path": "/icons/sensory/motion.svg",
+          "notes_for_devs": "Primarily a video editing technique. Hard to detect from text alone."
+        }
+      ]
+    },
+    "social": {
+      "id": "social",
+      "name": "Social & Relational Hooks",
+      "description": "Hooks that leverage social psychology, making the viewer feel part of (or against) a group.",
+      "hooks": [
+        {
+          "id": "relatability_pov",
+          "category_id": "social",
+          "name": "The 'Relatability' Hook (POV)",
+          "description": "Naming a highly specific, shared experience or feeling, often using 'POV' (Point of View).",
+          "examples": [
+            "POV: You're trying to work but your cat...",
+            "It's that feeling when...",
+            "Things only [Group] will understand."
+          ],
+          "regex_triggers": [
+            "/(pov:|point of view)/i",
+            "/(it's that feeling when|that feeling when|tfw)/i",
+            "/(things only .* understand|if you're a)/i"
+          ],
+          "warnings": [
+            "Can feel exclusive if the 'shared' experience is too niche.",
+            "Relies on deep audience understanding.",
+            "Risk of being unoriginal."
+          ],
+          "icon_path": "/icons/social/pov.svg"
+        },
+        {
+          "id": "authority_proof",
+          "category_id": "social",
+          "name": "The 'Authority' Hook (Social Proof)",
+          "description": "Immediately establishing credibility or expertise to make the information seem valuable.",
+          "examples": [
+            "As a doctor with 15 years of experience...",
+            "What I learned from interviewing 100 millionaires...",
+            "As a former [Big Tech Company] employee..."
+          ],
+          "regex_triggers": [
+            "/(as a [a-z]+|as an [a-z]+)/i",
+            "/(with [0-9]+ years of experience|i've been a)/i",
+            "/(what i learned from|after interviewing)/i",
+            "/(as a former|ex-google|ex-meta)/i"
+          ],
+          "warnings": [
+            "Requires genuine credentials or it's fraudulent.",
+            "Can sound arrogant if not handled carefully.",
+            "Must be relevant to the content."
+          ],
+          "icon_path": "/icons/social/authority.svg"
+        },
+        {
+          "id": "us_vs_them",
+          "category_id": "social",
+          "name": "The 'Us vs. Them' Hook (Conflict)",
+          "description": "Creating a binary opposition or perceived conflict between two groups, forcing the viewer to 'pick a side'.",
+          "examples": [
+            "There are two types of people in this world...",
+            "Millennials vs. Gen Z try...",
+            "Why [Group A] is better than [Group B]."
+          ],
+          "regex_triggers": [
+            "/(two types of people|2 types of people)/i",
+            "/([a-z]+ vs\\. [a-z]+|[a-z]+ vs [a-z]+)/i",
+            "/(why .* is better than)/i"
+          ],
+          "warnings": [
+            "Can create unnecessary division and negativity.",
+            "Oversimplifies complex issues.",
+            "Risks alienating the 'losing' side."
+          ],
+          "icon_path": "/icons/social/conflict.svg"
+        }
+      ]
+    },
+    "utility": {
+      "id": "utility",
+      "name": "Utility & Value Hooks",
+      "description": "Hooks that make an explicit promise that the content will solve a problem or provide a direct benefit.",
+      "hooks": [
+        {
+          "id": "problem_solution",
+          "category_id": "utility",
+          "name": "Problem-Solution",
+          "description": "Stating a common problem and immediately promising the solution.",
+          "examples": [
+            "If you struggle with [Problem], you need to do this one thing.",
+            "Stop doing [Common Mistake], do this instead.",
+            "Your [Item] keeps dying? Here's how to fix it."
+          ],
+          "regex_triggers": [
+            "/(if you struggle with|do you struggle with|tired of)/i",
+            "/(stop doing|stop buying)/i",
+            "/(here's how to fix|how to solve|do this instead)/i"
+          ],
+          "warnings": [
+            "The solution must be clear, concise, and valuable.",
+            "The problem must be one the audience actually has.",
+            "Can sound 'salesy' if not genuine."
+          ],
+          "icon_path": "/icons/utility/solution.svg"
+        },
+        {
+          "id": "hack_shortcut",
+          "category_id": "utility",
+          "name": "The 'Hack' / Shortcut",
+          "description": "Promising a faster, cheaper, or easier way to accomplish a task.",
+          "examples": [
+            "The easiest way to clean [Object].",
+            "How to get [Expensive Item] for free.",
+            "I'm going to teach you [Skill] in 30 seconds."
+          ],
+          "regex_triggers": [
+            "/(hack|lifehack|life hack)/i",
+            "/(easiest way to|quickest way to|fastest way to)/i",
+            "/(for free|in [0-9]+ seconds|in [0-9]+ minutes)/i"
+          ],
+          "warnings": [
+            "The 'hack' must actually work and be a true shortcut.",
+            "Can devalue expertise if all content is 'hacks'.",
+            "May border on clickbait if the promise is exaggerated."
+          ],
+          "icon_path": "/icons/utility/hack.svg"
+        },
+        {
+          "id": "direct_promise",
+          "category_id": "utility",
+          "name": "The Direct Promise",
+          "description": "Clearly and directly stating what the viewer will gain by watching.",
+          "examples": [
+            "By the end of this video, you will know how to...",
+            "I'm going to show you exactly how to set up...",
+            "This video will teach you..."
+          ],
+          "regex_triggers": [
+            "/(by the end of this video)/i",
+            "/(i'm going to (show|teach) you)/i",
+            "/(this video will teach you)/i",
+            "/^(how to|how i)/i"
+          ],
+          "warnings": [
+            "Very straightforward; may not be 'flashy' enough for all platforms.",
+            "You MUST deliver 100% on the promise or you will lose credibility."
+          ],
+          "icon_path": "/icons/utility/promise.svg"
+        }
+      ]
+    }
+  }
+}

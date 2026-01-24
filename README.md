@@ -5,6 +5,7 @@ A collaborative, curated list of technical resources, tools, and extensions to h
 ## 📋 Table of Contents
 
 - [About](#about)
+- [Cognitive Awareness Framework](#cognitive-awareness-framework)
 - [Resources](#resources)
 - [Contributing](#contributing)
 - [License](#license)
@@ -17,6 +18,32 @@ Social media platforms are increasingly flooded with AI-generated content, spam,
 - Block spam and low-quality posts
 - Enhance their social media experience
 - Protect their privacy and security
+
+## 🧠 Cognitive Awareness Framework
+
+We've developed a comprehensive framework for understanding and moderating cognitively addictive content patterns on social media. This framework goes beyond simple topic-based filtering to address the psychological mechanisms used to capture and hold attention.
+
+### Key Features
+
+- **Social Media Hooks Taxonomy**: Identifies the 1-3 second "snare" techniques used to stop scrolling
+- **Cognitively Addictive Themes Taxonomy**: Categorizes content genres that create sustained engagement and "binge-watching" behavior
+- **Machine-Readable Format**: JSON taxonomies designed for technical integration
+- **Creator Tools**: Framework for building script linters and content analysis tools
+- **User Empowerment**: Enables granular content filtering based on psychological mechanisms, not just topics
+
+### Documentation
+
+- **[Framework Overview](COGNITIVE_AWARENESS_FRAMEWORK.md)** - Complete documentation of the cognitive awareness system
+- **[Social Media Hooks Taxonomy](taxonomies/social-media-hooks.json)** - JSON taxonomy of attention-capture techniques
+- **[Cognitively Addictive Themes Taxonomy](taxonomies/cognitively-addictive-themes.json)** - JSON taxonomy of engagement patterns
+
+### Use Cases
+
+- Browser extensions for selective content filtering
+- Accessibility extensions for mobile platforms
+- Content creation tools and script linters
+- Platform-level digital well-being features
+- Research and analysis of social media patterns
 
 ## 📚 Resources
 
