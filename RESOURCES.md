@@ -2,6 +2,24 @@
 
 This document contains a curated list of tools and resources to help improve social media quality and combat AI-generated content.
 
+## 🧠 Cognitive Awareness Framework
+
+Resources and tools for understanding and moderating cognitively addictive content patterns.
+
+### Framework Documentation
+
+| Resource | Description | Type | Link |
+|----------|-------------|------|------|
+| Cognitive Awareness Framework | Complete framework for identifying and moderating cognitively addictive content patterns | Documentation | [View](COGNITIVE_AWARENESS_FRAMEWORK.md) |
+| Social Media Hooks Taxonomy | Machine-readable taxonomy of attention-capture techniques | JSON | [Download](taxonomies/social-media-hooks.json) |
+| Cognitively Addictive Themes Taxonomy | Machine-readable taxonomy of engagement patterns | JSON | [Download](taxonomies/cognitively-addictive-themes.json) |
+
+### Implementation Resources
+
+| Name | Description | Platform | Link |
+|------|-------------|----------|------|
+| *Add your implementation here* | Tools implementing the cognitive awareness framework | | |
+
 ## 🤖 AI Content Detection Tools
 
 Tools specifically designed to identify AI-generated content across various media types.

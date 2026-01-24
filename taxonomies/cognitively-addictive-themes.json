@@ -1,0 +1,433 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-01-24T09:34:00Z",
+  "notes_for_adoption": "This taxonomy categorizes content themes known for high user retention and 'addictive' properties. Use 'psychological_driver' for educational tooltips and 'warnings' for content linters.",
+  "categories": {
+    "process_and_completion": {
+      "id": "process_and_completion",
+      "name": "Process & Completion",
+      "description": "Themes that tap into the human desire to see a task through from start to finish, providing a dopamine hit upon completion ('order from chaos').",
+      "themes": [
+        {
+          "id": "transformation_renovation",
+          "category_id": "process_and_completion",
+          "name": "Transformation & Renovation",
+          "description": "Following a long-term project (home, car, furniture) from a 'bad' state to a 'good' one. Includes 'flipping' content.",
+          "examples": [
+            "Our 1920s Home Renovation (Ep. 1)",
+            "Watch Me Flip This $50 Dresser",
+            "Abandoned Project Car Gets a Full Restoration"
+          ],
+          "psychological_driver": "Satisfies the desire for problem-solving, visual progress, and a dramatic final reveal.",
+          "regex_triggers": [
+            "/(reno|renovation|flip|flipping|DIY|project car|before and after)/i",
+            "/(restoring|restoration|update|makeover)/i"
+          ],
+          "warnings": [
+            "Sets unrealistic expectations for time, cost, and effort in real life.",
+            "Can promote dissatisfaction with one's own environment."
+          ],
+          "icon_path": "/icons/themes/renovation.svg"
+        },
+        {
+          "id": "restoration_cleaning",
+          "category_id": "process_and_completion",
+          "name": "Restoration & Cleaning",
+          "description": "Videos showing 'order from chaos' in a short loop. Power washing, car detailing, 'clean with me,' decluttering, etc.",
+          "examples": [
+            "Deep Cleaning My Messy Room",
+            "Satisfying Power Washing Compilation",
+            "Car Detailing a Filthy Interior"
+          ],
+          "psychological_driver": "A pure, fast, and visually 'satisfying' hit of completion and order without any physical effort from the viewer.",
+          "regex_triggers": [
+            "/(clean with me|cleaning|declutter|organizing|power wash|car detailing|satisfying clean)/i"
+          ],
+          "warnings": [
+            "Can be fetishized, potentially contributing to obsessive-compulsive thoughts.",
+            "Sets unrealistic standards of cleanliness."
+          ],
+          "icon_path": "/icons/themes/cleaning.svg"
+        },
+        {
+          "id": "creation_process",
+          "category_id": "process_and_completion",
+          "name": "Creation Process",
+          "description": "Watching a skilled artisan or creator make something from scratch (art, food, craft, code).",
+          "examples": [
+            "How I Paint a Photorealistic Portrait",
+            "Making a 3-Course Meal from Scratch",
+            "Building a Video Game in 100 Days"
+          ],
+          "psychological_driver": "Combines the satisfaction of completion with admiration for skill ('flow state') and a sense of vicarious achievement.",
+          "regex_triggers": [
+            "/(how it's made|art process|painting|pottery|woodworking|baking|cooking|recipe|i built|i made)/i"
+          ],
+          "warnings": [
+            "Can be discouraging to beginners who compare their 'messy' process to the curated final product."
+          ],
+          "icon_path": "/icons/themes/creation.svg"
+        }
+      ]
+    },
+    "social_and_parasocial": {
+      "id": "social_and_parasocial",
+      "name": "Social & Parasocial",
+      "description": "Themes that tap into the human need for social connection, status, and drama. Creates a 'parasocial' (one-sided) relationship with the creator.",
+      "themes": [
+        {
+          "id": "interpersonal_drama",
+          "category_id": "social_and_parasocial",
+          "name": "Interpersonal Drama",
+          "description": "Following ongoing conflicts, relationship updates, or controversies involving creators or public figures.",
+          "examples": [
+            "YouTuber Drama Updates",
+            "Relationship Status Reveals",
+            "Celebrity Feud Breakdowns"
+          ],
+          "psychological_driver": "Satisfies curiosity about social dynamics and provides a sense of 'insider' knowledge. Triggers the same neural pathways as real-life gossip.",
+          "regex_triggers": [
+            "/(drama|feud|beef|controversy|exposed|called out)/i",
+            "/(relationship update|breakup|getting back together)/i"
+          ],
+          "warnings": [
+            "Promotes negativity and voyeurism.",
+            "Can normalize toxic behavior and conflict.",
+            "May spread misinformation."
+          ],
+          "icon_path": "/icons/themes/drama.svg"
+        },
+        {
+          "id": "daily_vlog_lifestyle",
+          "category_id": "social_and_parasocial",
+          "name": "Daily Vlog / Lifestyle",
+          "description": "Following someone's daily life, creating a parasocial relationship where the viewer feels like a 'friend'.",
+          "examples": [
+            "A Day in My Life as a...",
+            "Come With Me to...",
+            "Weekly Vlog"
+          ],
+          "psychological_driver": "Creates a false sense of intimacy and friendship. The brain processes it similarly to real social interaction.",
+          "regex_triggers": [
+            "/(day in my life|come with me|weekly vlog|daily vlog)/i",
+            "/(morning routine|night routine|what i eat in a day)/i"
+          ],
+          "warnings": [
+            "Can lead to unhealthy parasocial attachments.",
+            "May create unrealistic lifestyle expectations.",
+            "Viewer may neglect real-life relationships."
+          ],
+          "icon_path": "/icons/themes/vlog.svg"
+        },
+        {
+          "id": "reaction_commentary",
+          "category_id": "social_and_parasocial",
+          "name": "Reaction & Commentary",
+          "description": "Watching someone else react to or comment on other content, providing a 'shared viewing experience'.",
+          "examples": [
+            "Reacting to [Viral Video]",
+            "Commentary on [Topic]",
+            "First Time Watching [Media]"
+          ],
+          "psychological_driver": "Provides social context and validation for the viewer's own opinions. Reduces loneliness by simulating 'watching together'.",
+          "regex_triggers": [
+            "/(reacting to|reaction to|first time watching)/i",
+            "/(commentary|reviewing|my thoughts on)/i"
+          ],
+          "warnings": [
+            "Can be intellectually lazy; viewer consumes opinions rather than forming their own.",
+            "May amplify negativity if the reaction is critical."
+          ],
+          "icon_path": "/icons/themes/reaction.svg"
+        }
+      ]
+    },
+    "novelty_and_unboxing": {
+      "id": "novelty_and_unboxing",
+      "name": "Novelty & Unboxing",
+      "description": "Themes that tap into the dopamine hit of discovering something new or witnessing a 'reveal'.",
+      "themes": [
+        {
+          "id": "unboxing_haul",
+          "category_id": "novelty_and_unboxing",
+          "name": "Unboxing / Haul",
+          "description": "Watching someone open and display new products or purchases.",
+          "examples": [
+            "Amazon Haul",
+            "Tech Unboxing",
+            "Clothing Haul from [Store]"
+          ],
+          "psychological_driver": "Triggers the same dopamine response as making a purchase yourself, without the cost. Satisfies curiosity about new products.",
+          "regex_triggers": [
+            "/(unboxing|haul|what i bought)/i",
+            "/(pr package|mystery box)/i"
+          ],
+          "warnings": [
+            "Promotes consumerism and impulse buying.",
+            "Can lead to dissatisfaction with one's own possessions.",
+            "Often includes undisclosed sponsorships."
+          ],
+          "icon_path": "/icons/themes/unboxing.svg"
+        },
+        {
+          "id": "try_on_taste_test",
+          "category_id": "novelty_and_unboxing",
+          "name": "Try-On / Taste Test",
+          "description": "Watching someone try new products, foods, or experiences for the first time.",
+          "examples": [
+            "Trying Foods from [Country]",
+            "Testing Viral TikTok Products",
+            "I Tried [Trend] for 30 Days"
+          ],
+          "psychological_driver": "Vicarious novelty. The viewer experiences the 'new' thing through the creator, satisfying curiosity without risk.",
+          "regex_triggers": [
+            "/(trying|i tried|taste test|testing)/i",
+            "/(for the first time|challenge|experiment)/i"
+          ],
+          "warnings": [
+            "Can promote overconsumption and waste.",
+            "May create FOMO (fear of missing out)."
+          ],
+          "icon_path": "/icons/themes/trytest.svg"
+        },
+        {
+          "id": "trend_participation",
+          "category_id": "novelty_and_unboxing",
+          "name": "Trend Participation",
+          "description": "Content that participates in a viral trend, challenge, or meme format.",
+          "examples": [
+            "[Current Viral Dance]",
+            "[Current Challenge]",
+            "Using [Trending Audio]"
+          ],
+          "psychological_driver": "Combines novelty with social proof. The viewer wants to be 'in the know' and part of the cultural moment.",
+          "regex_triggers": [
+            "/(trend|trending|viral|challenge)/i",
+            "/(#fyp|#foryoupage|#viral)/i"
+          ],
+          "warnings": [
+            "Extremely short lifespan; quickly becomes irrelevant.",
+            "Can promote dangerous challenges.",
+            "Often low-effort content."
+          ],
+          "icon_path": "/icons/themes/trend.svg"
+        }
+      ]
+    },
+    "low_cognitive_load": {
+      "id": "low_cognitive_load",
+      "name": "Low Cognitive Load",
+      "description": "Content that requires minimal mental effort to consume, allowing for 'mindless scrolling' and dissociation.",
+      "themes": [
+        {
+          "id": "brainrot_sludge",
+          "category_id": "low_cognitive_load",
+          "name": "Brainrot / Sludge Content",
+          "description": "Multi-layered content with unrelated, high-stimulation elements playing simultaneously (e.g., gameplay footage with a podcast voiceover and subtitles from a different video).",
+          "examples": [
+            "[Minecraft parkour] + [Reddit story narration] + [Family Guy clip]",
+            "[Subway Surfers] + [True crime podcast]"
+          ],
+          "psychological_driver": "Overstimulates the brain to the point of dissociation. Each element individually is not engaging enough, but together they trap attention.",
+          "regex_triggers": [
+            "/(brainrot|sludge content|satisfying|asmr)/i"
+          ],
+          "warnings": [
+            "Reduces attention span and ability to focus on single-task content.",
+            "Can lead to dissociative states and time loss.",
+            "Highly addictive."
+          ],
+          "icon_path": "/icons/themes/brainrot.svg",
+          "notes_for_devs": "Extremely difficult to detect programmatically without advanced video analysis."
+        },
+        {
+          "id": "compilation_loop",
+          "category_id": "low_cognitive_load",
+          "name": "Compilation / Loop",
+          "description": "Short, repetitive clips compiled together or a single action looped endlessly.",
+          "examples": [
+            "Funny Cat Compilation",
+            "Satisfying Loops",
+            "Fails Compilation"
+          ],
+          "psychological_driver": "Each clip is short enough that the brain never fully 'checks out.' The promise of a 'better' clip keeps the viewer watching.",
+          "regex_triggers": [
+            "/(compilation|comp|loop|endless)/i",
+            "/(#compilation|best of)/i"
+          ],
+          "warnings": [
+            "Can lead to long viewing sessions with no memory of what was watched.",
+            "Reduces ability to engage with longer-form content."
+          ],
+          "icon_path": "/icons/themes/compilation.svg"
+        },
+        {
+          "id": "shorts_feed",
+          "category_id": "low_cognitive_load",
+          "name": "Shorts / Feed Scrolling",
+          "description": "The act of endlessly scrolling through a feed of short-form vertical videos (TikTok, YouTube Shorts, Instagram Reels).",
+          "examples": [
+            "[Any short-form video platform feed]"
+          ],
+          "psychological_driver": "Variable reward schedule. Each swipe might reveal something interesting, triggering the same neural pathways as slot machines.",
+          "regex_triggers": [
+            "/(#shorts|#reels|#tiktok)/i"
+          ],
+          "warnings": [
+            "Extremely addictive due to variable reward and low barrier to next video.",
+            "Can lead to hours of lost time.",
+            "Difficult to moderate at the individual video level; the feed itself is the problem."
+          ],
+          "icon_path": "/icons/themes/shorts.svg",
+          "notes_for_devs": "This is a platform-level pattern, not a content pattern. Detection would focus on the user's scrolling behavior, not the content itself."
+        }
+      ]
+    },
+    "aspirational_envy": {
+      "id": "aspirational_envy",
+      "name": "Aspirational & Envy",
+      "description": "Themes that showcase wealth, success, beauty, or lifestyle that the viewer aspires to but likely cannot attain, creating a mix of inspiration and dissatisfaction.",
+      "themes": [
+        {
+          "id": "luxury_lifestyle",
+          "category_id": "aspirational_envy",
+          "name": "Luxury & Lifestyle",
+          "description": "Content showcasing expensive products, travel, homes, or experiences.",
+          "examples": [
+            "A Day in My Life as a Millionaire",
+            "Luxury Hotel Tour",
+            "My Designer Collection"
+          ],
+          "psychological_driver": "Triggers both aspiration and envy. The viewer fantasizes about the lifestyle while potentially feeling inadequate about their own.",
+          "regex_triggers": [
+            "/(luxury|expensive|rich|millionaire|billionaire)/i",
+            "/(designer|high-end|exclusive)/i"
+          ],
+          "warnings": [
+            "Can foster materialism and dissatisfaction.",
+            "May promote unrealistic financial goals.",
+            "Often obscures the actual cost or privilege involved."
+          ],
+          "icon_path": "/icons/themes/luxury.svg"
+        },
+        {
+          "id": "aesthetic_inspiration",
+          "category_id": "aspirational_envy",
+          "name": "Aesthetic & Inspiration",
+          "description": "Highly curated, visually perfect content (home decor, fashion, art) designed to be aspirational.",
+          "examples": [
+            "Cozy Aesthetic Room Tour",
+            "Outfit of the Day",
+            "Study With Me (Aesthetic)"
+          ],
+          "psychological_driver": "Satisfies the desire for beauty and order. Can be calming but also promotes comparison and dissatisfaction with one's own environment.",
+          "regex_triggers": [
+            "/(aesthetic|cozy|minimalist|inspo|inspiration)/i",
+            "/(room tour|apartment tour|outfit of the day|ootd)/i"
+          ],
+          "warnings": [
+            "Can set unrealistic standards for appearance and environment.",
+            "May promote overconsumption to achieve the 'aesthetic'.",
+            "Hides the effort, cost, and privilege behind the curation."
+          ],
+          "icon_path": "/icons/themes/aesthetic.svg"
+        },
+        {
+          "id": "fitness_transformation",
+          "category_id": "aspirational_envy",
+          "name": "Fitness & Transformation",
+          "description": "Content showing physical transformations, workouts, or 'what I eat in a day' content.",
+          "examples": [
+            "My 3-Month Transformation",
+            "Full Body Workout",
+            "What I Eat in a Day to Lose Weight"
+          ],
+          "psychological_driver": "Aspirational but also triggering. Can inspire healthy behavior but also promote body dissatisfaction and comparison.",
+          "regex_triggers": [
+            "/(transformation|before and after|weight loss|muscle gain)/i",
+            "/(workout|fitness|gym|what i eat in a day)/i"
+          ],
+          "warnings": [
+            "Can promote unhealthy body image and eating disorders.",
+            "Often unrealistic or unsustainable methods.",
+            "May not disclose use of supplements, editing, or other factors."
+          ],
+          "icon_path": "/icons/themes/fitness.svg"
+        }
+      ]
+    },
+    "education_infotainment": {
+      "id": "education_infotainment",
+      "name": "Education & Infotainment",
+      "description": "Content that educates or informs, but in a highly engaging, entertaining format. Can be genuinely valuable but also addictive.",
+      "themes": [
+        {
+          "id": "deep_dive_explainer",
+          "category_id": "education_infotainment",
+          "name": "Deep Dive / Explainer",
+          "description": "Long-form video essays or documentary-style content about a specific topic.",
+          "examples": [
+            "The Complete History of [Topic]",
+            "Video Essay: Why [Thing] Matters",
+            "Documentary-Style Investigation"
+          ],
+          "psychological_driver": "Satisfies curiosity and provides a sense of learning and intellectual stimulation. The long format can lead to 'just one more video' binging.",
+          "regex_triggers": [
+            "/(deep dive|video essay|explained|documentary|the history of)/i",
+            "/(complete guide|everything you need to know)/i"
+          ],
+          "warnings": [
+            "Can give a false sense of expertise from passive consumption.",
+            "Quality and accuracy vary widely.",
+            "Long format can lead to significant time investment."
+          ],
+          "icon_path": "/icons/themes/deepdive.svg"
+        },
+        {
+          "id": "quick_facts_trivia",
+          "category_id": "education_infotainment",
+          "name": "Quick Facts / Trivia",
+          "description": "Bite-sized, surprising facts or trivia delivered rapidly.",
+          "examples": [
+            "10 Facts You Didn't Know About...",
+            "Did You Know?",
+            "Mind-Blowing Science Facts"
+          ],
+          "psychological_driver": "Provides quick dopamine hits of 'learning' without requiring deep thought. Easy to consume in rapid succession.",
+          "regex_triggers": [
+            "/(did you know|fun fact|facts about|trivia)/i",
+            "/(mind-blowing|surprising|amazing facts)/i"
+          ],
+          "warnings": [
+            "Often lacks context or nuance.",
+            "May spread misinformation if not fact-checked.",
+            "Promotes shallow learning over deep understanding."
+          ],
+          "icon_path": "/icons/themes/trivia.svg"
+        },
+        {
+          "id": "how_to_tutorial",
+          "category_id": "education_infotainment",
+          "name": "How-To / Tutorial",
+          "description": "Step-by-step instructional content teaching a skill or process.",
+          "examples": [
+            "How to [Skill]",
+            "Tutorial: [Software]",
+            "Learn [Language] in 10 Minutes"
+          ],
+          "psychological_driver": "Provides a clear path to skill acquisition. Can be genuinely useful but also leads to 'tutorial hell' where consumption replaces action.",
+          "regex_triggers": [
+            "/(how to|tutorial|guide|learn|teach)/i",
+            "/(step by step|beginner's guide)/i"
+          ],
+          "warnings": [
+            "Can lead to passive learning without actual practice.",
+            "May oversimplify complex skills.",
+            "Viewer may collect tutorials without implementing them."
+          ],
+          "icon_path": "/icons/themes/howto.svg"
+        }
+      ]
+    }
+  }
+}
