@@ -60,6 +60,15 @@ title: Social Media Behavior Quiz
 </div>
 
 <script>
+// Site URLs
+const SITE_URLS = {
+  resources: '{{ "/resources" | relative_url }}',
+  framework: '{{ "/framework" | relative_url }}',
+  resourcesBrowserExtensions: '{{ "/resources" | relative_url }}#browser-extensions',
+  resourcesPrivacy: '{{ "/resources" | relative_url }}#privacy',
+  resourcesDeveloper: '{{ "/resources" | relative_url }}#developer'
+};
+
 // Quiz data structure
 const quizData = {
   questions: [
@@ -311,7 +320,7 @@ function showResults() {
   if (recommendations.framework) {
     html += '<div class="recommendation-category"><h4>🧠 Cognitive Awareness Framework</h4>';
     html += '<p>Based on your concerns about addictive content, we recommend exploring our Cognitive Awareness Framework. This framework helps you understand and moderate cognitively addictive content patterns.</p>';
-    html += '<a href="{{ \'/framework\' | relative_url }}" class="btn btn-primary">View Framework</a></div>';
+    html += '<a href="' + SITE_URLS.framework + '" class="btn btn-primary">View Framework</a></div>';
   }
   
   // Privacy Tools
@@ -327,7 +336,7 @@ function showResults() {
   if (recommendations.developerTools && (userAnswers.q9 === 'advanced' || userAnswers.q9 === 'expert')) {
     html += '<div class="recommendation-category"><h4>🔧 Developer Tools</h4>';
     html += '<p>As an advanced user, you might be interested in our developer resources and APIs.</p>';
-    html += '<a href="{{ \'/resources\' | relative_url }}#developer" class="btn btn-secondary">View Developer Tools</a></div>';
+    html += '<a href="' + SITE_URLS.resourcesDeveloper + '" class="btn btn-secondary">View Developer Tools</a></div>';
   }
   
   // Additional tips
@@ -361,14 +370,14 @@ function generateRecommendations() {
       recommendations.browserExtensions.push({
         name: 'Unhook',
         description: 'Remove YouTube recommendations, comments, and other distracting elements',
-        link: '{{ \'/resources\' | relative_url }}#browser-extensions'
+        link: SITE_URLS.resourcesBrowserExtensions
       });
     }
     if (contentTypes.includes('clickbait')) {
       recommendations.browserExtensions.push({
         name: 'DeArrow',
         description: 'Replace clickbait titles and thumbnails with community-sourced alternatives',
-        link: '{{ \'/resources\' | relative_url }}#browser-extensions'
+        link: SITE_URLS.resourcesBrowserExtensions
       });
     }
   }
@@ -378,7 +387,7 @@ function generateRecommendations() {
     recommendations.browserExtensions.push({
       name: 'Control Panel for Twitter',
       description: 'Customize your Twitter experience with granular controls',
-      link: '{{ \'/resources\' | relative_url }}#browser-extensions'
+      link: SITE_URLS.resourcesBrowserExtensions
     });
   }
   
@@ -388,7 +397,7 @@ function generateRecommendations() {
       recommendations.browserExtensions.push({
         name: 'Unhook for Reddit',
         description: 'Control what you see on Reddit with customizable filters',
-        link: '{{ \'/resources\' | relative_url }}#browser-extensions'
+        link: SITE_URLS.resourcesBrowserExtensions
       });
     }
   }
@@ -398,7 +407,7 @@ function generateRecommendations() {
     recommendations.browserExtensions.push({
       name: 'News Feed Eradicator',
       description: 'Replace distracting news feeds with inspiring quotes',
-      link: '{{ \'/resources\' | relative_url }}#browser-extensions'
+      link: SITE_URLS.resourcesBrowserExtensions
     });
   }
   
@@ -413,7 +422,7 @@ function generateRecommendations() {
     recommendations.privacyTools.push({
       name: 'LibRedirect',
       description: 'Automatically redirect to privacy-friendly alternative frontends',
-      link: '{{ \'/resources\' | relative_url }}#privacy'
+      link: SITE_URLS.resourcesPrivacy
     });
   }
   

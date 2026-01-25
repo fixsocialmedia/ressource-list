@@ -11,13 +11,13 @@
     <span class="current-lang">{{ lang | upcase }}</span>
   </button>
   <div class="lang-dropdown" id="lang-dropdown">
-    <a href="{{ page.url | remove: '/fr' | remove: '/es' }}" class="lang-option {% if lang == 'en' %}active{% endif %}" data-lang="en">
+    <a href="{{ page.url | remove: '/fr' | remove: '/es' | relative_url }}" class="lang-option {% if lang == 'en' %}active{% endif %}" data-lang="en">
       English
     </a>
-    <a href="/fr{{ page.url }}" class="lang-option {% if lang == 'fr' %}active{% endif %}" data-lang="fr">
+    <a href="{{ '/fr' | append: page.url | relative_url }}" class="lang-option {% if lang == 'fr' %}active{% endif %}" data-lang="fr">
       Français
     </a>
-    <a href="/es{{ page.url }}" class="lang-option {% if lang == 'es' %}active{% endif %}" data-lang="es">
+    <a href="{{ '/es' | append: page.url | relative_url }}" class="lang-option {% if lang == 'es' %}active{% endif %}" data-lang="es">
       Español
     </a>
   </div>
