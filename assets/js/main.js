@@ -32,15 +32,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Search and Filter functionality
     const searchInput = document.getElementById('resource-search');
-    const categoryFilter = document.getElementById('category-filter');
     const filterChips = document.querySelectorAll('.chip');
     
     if (searchInput) {
         searchInput.addEventListener('input', filterResources);
-    }
-    
-    if (categoryFilter) {
-        categoryFilter.addEventListener('change', filterResources);
     }
     
     filterChips.forEach(chip => {
