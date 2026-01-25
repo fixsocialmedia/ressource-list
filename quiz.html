@@ -1,0 +1,605 @@
+---
+layout: default
+title: Social Media Behavior Quiz
+---
+
+<div class="page-header">
+  <div class="container">
+    <h1 id="quiz-title">Social Media Behavior Assessment</h1>
+    <p id="quiz-subtitle">Discover personalized tools to improve your digital well-being</p>
+  </div>
+</div>
+
+<div class="container doc-content">
+  <div id="quiz-container">
+    <!-- Welcome Screen -->
+    <div id="quiz-welcome" class="quiz-section active">
+      <h2 id="welcome-heading">Welcome to the Social Media Assessment Quiz</h2>
+      <p id="welcome-description">This quiz will help you:</p>
+      <ul id="welcome-list">
+        <li>Understand your social media behavior patterns</li>
+        <li>Identify areas where you'd like to make changes</li>
+        <li>Receive personalized tool recommendations</li>
+        <li>Take control of your digital well-being</li>
+      </ul>
+      <p id="privacy-note"><strong>Privacy Note:</strong> All responses are processed locally in your browser. No data is collected or stored.</p>
+      <button class="btn btn-primary btn-large" onclick="startQuiz()" id="start-btn">Start Assessment</button>
+    </div>
+
+    <!-- Quiz Questions -->
+    <div id="quiz-questions" class="quiz-section">
+      <div class="quiz-progress">
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <p id="question-counter" class="question-counter">Question <span id="current-question">1</span> of <span id="total-questions">10</span></p>
+      </div>
+
+      <div id="question-content">
+        <!-- Questions will be dynamically inserted here -->
+      </div>
+
+      <div class="quiz-navigation">
+        <button class="btn btn-secondary" onclick="previousQuestion()" id="prev-btn" style="display: none;">Previous</button>
+        <button class="btn btn-primary" onclick="nextQuestion()" id="next-btn">Next</button>
+      </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="quiz-results" class="quiz-section">
+      <h2 id="results-heading">Your Personalized Recommendations</h2>
+      <div id="results-content">
+        <!-- Results will be dynamically inserted here -->
+      </div>
+      <div class="cta-buttons">
+        <button class="btn btn-primary btn-large" onclick="restartQuiz()" id="restart-btn">Retake Quiz</button>
+        <a href="{{ '/resources' | relative_url }}" class="btn btn-outline btn-large" id="browse-resources-btn">Browse All Resources</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Site URLs
+const SITE_URLS = {
+  resources: '{{ "/resources" | relative_url }}',
+  framework: '{{ "/framework" | relative_url }}',
+  resourcesBrowserExtensions: '{{ "/resources" | relative_url }}#browser-extensions',
+  resourcesPrivacy: '{{ "/resources" | relative_url }}#privacy',
+  resourcesDeveloper: '{{ "/resources" | relative_url }}#developer'
+};
+
+// Quiz data structure
+const quizData = {
+  questions: [
+    {
+      id: 'q1',
+      text: 'What social media platforms do you currently use? (Select all that apply)',
+      textKey: 'quiz.q1.text',
+      type: 'multiple',
+      options: [
+        { id: 'facebook', text: 'Facebook', textKey: 'quiz.q1.facebook' },
+        { id: 'instagram', text: 'Instagram', textKey: 'quiz.q1.instagram' },
+        { id: 'twitter', text: 'Twitter/X', textKey: 'quiz.q1.twitter' },
+        { id: 'tiktok', text: 'TikTok', textKey: 'quiz.q1.tiktok' },
+        { id: 'youtube', text: 'YouTube', textKey: 'quiz.q1.youtube' },
+        { id: 'reddit', text: 'Reddit', textKey: 'quiz.q1.reddit' },
+        { id: 'linkedin', text: 'LinkedIn', textKey: 'quiz.q1.linkedin' },
+        { id: 'other', text: 'Other', textKey: 'quiz.q1.other' }
+      ]
+    },
+    {
+      id: 'q2',
+      text: 'How much time do you typically spend on social media per day?',
+      textKey: 'quiz.q2.text',
+      type: 'single',
+      options: [
+        { id: 'less-1h', text: 'Less than 1 hour', textKey: 'quiz.q2.less_1h' },
+        { id: '1-2h', text: '1-2 hours', textKey: 'quiz.q2.1_2h' },
+        { id: '2-4h', text: '2-4 hours', textKey: 'quiz.q2.2_4h' },
+        { id: '4-6h', text: '4-6 hours', textKey: 'quiz.q2.4_6h' },
+        { id: 'more-6h', text: 'More than 6 hours', textKey: 'quiz.q2.more_6h' }
+      ]
+    },
+    {
+      id: 'q3',
+      text: 'What concerns you most about your social media use? (Select all that apply)',
+      textKey: 'quiz.q3.text',
+      type: 'multiple',
+      options: [
+        { id: 'time-waste', text: 'Wasting too much time', textKey: 'quiz.q3.time_waste' },
+        { id: 'mental-health', text: 'Impact on mental health', textKey: 'quiz.q3.mental_health' },
+        { id: 'privacy', text: 'Privacy concerns', textKey: 'quiz.q3.privacy' },
+        { id: 'ai-content', text: 'AI-generated content and spam', textKey: 'quiz.q3.ai_content' },
+        { id: 'distraction', text: 'Difficulty focusing on important tasks', textKey: 'quiz.q3.distraction' },
+        { id: 'comparison', text: 'Comparing myself to others', textKey: 'quiz.q3.comparison' },
+        { id: 'algorithm', text: 'Being controlled by algorithms', textKey: 'quiz.q3.algorithm' }
+      ]
+    },
+    {
+      id: 'q4',
+      text: 'Which features would you like to have more control over? (Select all that apply)',
+      textKey: 'quiz.q4.text',
+      type: 'multiple',
+      options: [
+        { id: 'feed', text: 'News feed/Home feed', textKey: 'quiz.q4.feed' },
+        { id: 'recommendations', text: 'Recommendations and suggestions', textKey: 'quiz.q4.recommendations' },
+        { id: 'notifications', text: 'Notifications', textKey: 'quiz.q4.notifications' },
+        { id: 'autoplay', text: 'Autoplay videos', textKey: 'quiz.q4.autoplay' },
+        { id: 'infinite-scroll', text: 'Infinite scroll', textKey: 'quiz.q4.infinite_scroll' },
+        { id: 'comments', text: 'Comments sections', textKey: 'quiz.q4.comments' },
+        { id: 'ads', text: 'Advertisements', textKey: 'quiz.q4.ads' }
+      ]
+    },
+    {
+      id: 'q5',
+      text: 'How do you feel about AI-generated content on social media?',
+      textKey: 'quiz.q5.text',
+      type: 'single',
+      options: [
+        { id: 'very-concerned', text: 'Very concerned - I want to avoid it', textKey: 'quiz.q5.very_concerned' },
+        { id: 'somewhat-concerned', text: 'Somewhat concerned - I want to identify it', textKey: 'quiz.q5.somewhat_concerned' },
+        { id: 'neutral', text: 'Neutral - I don\'t mind either way', textKey: 'quiz.q5.neutral' },
+        { id: 'positive', text: 'Positive - I find some of it useful', textKey: 'quiz.q5.positive' }
+      ]
+    },
+    {
+      id: 'q6',
+      text: 'What type of content do you find most distracting or addictive? (Select all that apply)',
+      textKey: 'quiz.q6.text',
+      type: 'multiple',
+      options: [
+        { id: 'short-videos', text: 'Short-form videos (TikTok, Reels, Shorts)', textKey: 'quiz.q6.short_videos' },
+        { id: 'clickbait', text: 'Clickbait headlines', textKey: 'quiz.q6.clickbait' },
+        { id: 'controversy', text: 'Controversial or outrage-inducing content', textKey: 'quiz.q6.controversy' },
+        { id: 'news', text: 'Breaking news and trending topics', textKey: 'quiz.q6.news' },
+        { id: 'comparison-content', text: 'Lifestyle/comparison content', textKey: 'quiz.q6.comparison_content' },
+        { id: 'entertainment', text: 'Entertainment and memes', textKey: 'quiz.q6.entertainment' }
+      ]
+    },
+    {
+      id: 'q7',
+      text: 'What privacy features are important to you? (Select all that apply)',
+      textKey: 'quiz.q7.text',
+      type: 'multiple',
+      options: [
+        { id: 'tracking-protection', text: 'Block tracking across sites', textKey: 'quiz.q7.tracking_protection' },
+        { id: 'data-deletion', text: 'Automatically delete browsing data', textKey: 'quiz.q7.data_deletion' },
+        { id: 'alternative-frontends', text: 'Use privacy-focused alternative frontends', textKey: 'quiz.q7.alternative_frontends' },
+        { id: 'anonymous-browsing', text: 'Browse anonymously', textKey: 'quiz.q7.anonymous_browsing' },
+        { id: 'minimal-data', text: 'Minimize data collection', textKey: 'quiz.q7.minimal_data' }
+      ]
+    },
+    {
+      id: 'q8',
+      text: 'What browser(s) do you primarily use? (Select all that apply)',
+      textKey: 'quiz.q8.text',
+      type: 'multiple',
+      options: [
+        { id: 'chrome', text: 'Google Chrome', textKey: 'quiz.q8.chrome' },
+        { id: 'firefox', text: 'Mozilla Firefox', textKey: 'quiz.q8.firefox' },
+        { id: 'safari', text: 'Safari', textKey: 'quiz.q8.safari' },
+        { id: 'edge', text: 'Microsoft Edge', textKey: 'quiz.q8.edge' },
+        { id: 'brave', text: 'Brave', textKey: 'quiz.q8.brave' },
+        { id: 'other', text: 'Other', textKey: 'quiz.q8.other' }
+      ]
+    },
+    {
+      id: 'q9',
+      text: 'What is your technical skill level?',
+      textKey: 'quiz.q9.text',
+      type: 'single',
+      options: [
+        { id: 'beginner', text: 'Beginner - I prefer simple tools with minimal setup', textKey: 'quiz.q9.beginner' },
+        { id: 'intermediate', text: 'Intermediate - I can install extensions and configure settings', textKey: 'quiz.q9.intermediate' },
+        { id: 'advanced', text: 'Advanced - I can use APIs and developer tools', textKey: 'quiz.q9.advanced' },
+        { id: 'expert', text: 'Expert - I can build my own solutions', textKey: 'quiz.q9.expert' }
+      ]
+    },
+    {
+      id: 'q10',
+      text: 'What is your primary goal for improving your social media experience?',
+      textKey: 'quiz.q10.text',
+      type: 'single',
+      options: [
+        { id: 'reduce-time', text: 'Reduce time spent on social media', textKey: 'quiz.q10.reduce_time' },
+        { id: 'quality-content', text: 'Improve content quality', textKey: 'quiz.q10.quality_content' },
+        { id: 'protect-privacy', text: 'Protect my privacy', textKey: 'quiz.q10.protect_privacy' },
+        { id: 'mental-health', text: 'Improve mental health and well-being', textKey: 'quiz.q10.mental_health' },
+        { id: 'productivity', text: 'Increase productivity and focus', textKey: 'quiz.q10.productivity' },
+        { id: 'control', text: 'Take back control from algorithms', textKey: 'quiz.q10.control' }
+      ]
+    }
+  ]
+};
+
+let currentQuestionIndex = 0;
+let userAnswers = {};
+
+function startQuiz() {
+  document.getElementById('quiz-welcome').classList.remove('active');
+  document.getElementById('quiz-questions').classList.add('active');
+  displayQuestion();
+}
+
+function displayQuestion() {
+  const question = quizData.questions[currentQuestionIndex];
+  const questionContent = document.getElementById('question-content');
+  
+  let html = `<div class="question">
+    <h3 class="question-text">${question.text}</h3>
+    <div class="options">`;
+  
+  question.options.forEach((option, index) => {
+    const inputType = question.type === 'multiple' ? 'checkbox' : 'radio';
+    const isChecked = userAnswers[question.id] && 
+      (Array.isArray(userAnswers[question.id]) 
+        ? userAnswers[question.id].includes(option.id)
+        : userAnswers[question.id] === option.id);
+    
+    html += `
+      <label class="option-label">
+        <input type="${inputType}" 
+               name="q${currentQuestionIndex}" 
+               value="${option.id}"
+               ${isChecked ? 'checked' : ''}
+               onchange="saveAnswer('${question.id}', '${option.id}', '${question.type}')">
+        <span>${option.text}</span>
+      </label>`;
+  });
+  
+  html += `</div></div>`;
+  questionContent.innerHTML = html;
+  
+  // Update progress
+  const progress = ((currentQuestionIndex + 1) / quizData.questions.length) * 100;
+  document.getElementById('progress-fill').style.width = progress + '%';
+  document.getElementById('current-question').textContent = currentQuestionIndex + 1;
+  document.getElementById('total-questions').textContent = quizData.questions.length;
+  
+  // Update navigation buttons
+  document.getElementById('prev-btn').style.display = currentQuestionIndex > 0 ? 'inline-block' : 'none';
+  document.getElementById('next-btn').textContent = 
+    currentQuestionIndex === quizData.questions.length - 1 ? 'See Results' : 'Next';
+}
+
+function saveAnswer(questionId, optionId, type) {
+  if (type === 'multiple') {
+    if (!userAnswers[questionId]) {
+      userAnswers[questionId] = [];
+    }
+    const index = userAnswers[questionId].indexOf(optionId);
+    if (index > -1) {
+      userAnswers[questionId].splice(index, 1);
+    } else {
+      userAnswers[questionId].push(optionId);
+    }
+  } else {
+    userAnswers[questionId] = optionId;
+  }
+}
+
+function nextQuestion() {
+  if (currentQuestionIndex < quizData.questions.length - 1) {
+    currentQuestionIndex++;
+    displayQuestion();
+  } else {
+    showResults();
+  }
+}
+
+function previousQuestion() {
+  if (currentQuestionIndex > 0) {
+    currentQuestionIndex--;
+    displayQuestion();
+  }
+}
+
+function showResults() {
+  document.getElementById('quiz-questions').classList.remove('active');
+  document.getElementById('quiz-results').classList.add('active');
+  
+  const recommendations = generateRecommendations();
+  const resultsContent = document.getElementById('results-content');
+  
+  let html = '<div class="results-summary">';
+  
+  // Display summary
+  html += '<h3>Based on your responses, here are our recommendations:</h3>';
+  
+  // Browser Extensions
+  if (recommendations.browserExtensions.length > 0) {
+    html += '<div class="recommendation-category"><h4>🌐 Recommended Browser Extensions</h4><ul>';
+    recommendations.browserExtensions.forEach(rec => {
+      html += `<li><strong>${rec.name}:</strong> ${rec.description} <a href="${rec.link}" target="_blank">Learn more →</a></li>`;
+    });
+    html += '</ul></div>';
+  }
+  
+  // Framework Resources
+  if (recommendations.framework) {
+    html += '<div class="recommendation-category"><h4>🧠 Cognitive Awareness Framework</h4>';
+    html += '<p>Based on your concerns about addictive content, we recommend exploring our Cognitive Awareness Framework. This framework helps you understand and moderate cognitively addictive content patterns.</p>';
+    html += '<a href="' + SITE_URLS.framework + '" class="btn btn-primary">View Framework</a></div>';
+  }
+  
+  // Privacy Tools
+  if (recommendations.privacyTools.length > 0) {
+    html += '<div class="recommendation-category"><h4>🛡️ Privacy-Enhancing Tools</h4><ul>';
+    recommendations.privacyTools.forEach(rec => {
+      html += `<li><strong>${rec.name}:</strong> ${rec.description} <a href="${rec.link}" target="_blank">Learn more →</a></li>`;
+    });
+    html += '</ul></div>';
+  }
+  
+  // Developer Tools (if applicable)
+  if (recommendations.developerTools && (userAnswers.q9 === 'advanced' || userAnswers.q9 === 'expert')) {
+    html += '<div class="recommendation-category"><h4>🔧 Developer Tools</h4>';
+    html += '<p>As an advanced user, you might be interested in our developer resources and APIs.</p>';
+    html += '<a href="' + SITE_URLS.resourcesDeveloper + '" class="btn btn-secondary">View Developer Tools</a></div>';
+  }
+  
+  // Additional tips
+  html += '<div class="recommendation-category"><h4>💡 Additional Tips</h4><ul>';
+  html += recommendations.tips.map(tip => `<li>${tip}</li>`).join('');
+  html += '</ul></div>';
+  
+  html += '</div>';
+  resultsContent.innerHTML = html;
+}
+
+function generateRecommendations() {
+  const recommendations = {
+    browserExtensions: [],
+    privacyTools: [],
+    framework: false,
+    developerTools: false,
+    tips: []
+  };
+  
+  const platforms = userAnswers.q1 || [];
+  const concerns = userAnswers.q3 || [];
+  const features = userAnswers.q4 || [];
+  const contentTypes = userAnswers.q6 || [];
+  const privacy = userAnswers.q7 || [];
+  const goal = userAnswers.q10;
+  
+  // YouTube recommendations
+  if (platforms.includes('youtube')) {
+    if (features.includes('recommendations') || features.includes('autoplay')) {
+      recommendations.browserExtensions.push({
+        name: 'Unhook',
+        description: 'Remove YouTube recommendations, comments, and other distracting elements',
+        link: SITE_URLS.resourcesBrowserExtensions
+      });
+    }
+    if (contentTypes.includes('clickbait')) {
+      recommendations.browserExtensions.push({
+        name: 'DeArrow',
+        description: 'Replace clickbait titles and thumbnails with community-sourced alternatives',
+        link: SITE_URLS.resourcesBrowserExtensions
+      });
+    }
+  }
+  
+  // Twitter/X recommendations
+  if (platforms.includes('twitter')) {
+    recommendations.browserExtensions.push({
+      name: 'Control Panel for Twitter',
+      description: 'Customize your Twitter experience with granular controls',
+      link: SITE_URLS.resourcesBrowserExtensions
+    });
+  }
+  
+  // Reddit recommendations
+  if (platforms.includes('reddit')) {
+    if (features.includes('feed')) {
+      recommendations.browserExtensions.push({
+        name: 'Unhook for Reddit',
+        description: 'Control what you see on Reddit with customizable filters',
+        link: SITE_URLS.resourcesBrowserExtensions
+      });
+    }
+  }
+  
+  // Feed blocking for all platforms
+  if (features.includes('feed') || features.includes('infinite-scroll')) {
+    recommendations.browserExtensions.push({
+      name: 'News Feed Eradicator',
+      description: 'Replace distracting news feeds with inspiring quotes',
+      link: SITE_URLS.resourcesBrowserExtensions
+    });
+  }
+  
+  // Cognitive framework recommendation
+  if (contentTypes.includes('clickbait') || contentTypes.includes('controversy') || 
+      concerns.includes('mental-health') || concerns.includes('distraction')) {
+    recommendations.framework = true;
+  }
+  
+  // Privacy tools
+  if (privacy.includes('alternative-frontends')) {
+    recommendations.privacyTools.push({
+      name: 'LibRedirect',
+      description: 'Automatically redirect to privacy-friendly alternative frontends',
+      link: SITE_URLS.resourcesPrivacy
+    });
+  }
+  
+  if (privacy.includes('tracking-protection') || concerns.includes('privacy')) {
+    recommendations.tips.push('Use browser extensions that block trackers and ads');
+    recommendations.tips.push('Review and adjust your privacy settings on each platform');
+  }
+  
+  // AI content detection
+  if (concerns.includes('ai-content') && (userAnswers.q5 === 'very-concerned' || userAnswers.q5 === 'somewhat-concerned')) {
+    recommendations.tips.push('Explore AI content detection tools in our resources section');
+  }
+  
+  // Goal-based tips
+  if (goal === 'reduce-time' || goal === 'productivity') {
+    recommendations.tips.push('Consider setting time limits for social media apps');
+    recommendations.tips.push('Use browser extensions to remove infinite scroll and autoplay');
+  }
+  
+  if (goal === 'mental-health') {
+    recommendations.tips.push('Take regular breaks from social media');
+    recommendations.tips.push('Unfollow accounts that make you feel negative emotions');
+    recommendations.framework = true;
+  }
+  
+  if (goal === 'control') {
+    recommendations.tips.push('Use tools that give you control over what content you see');
+    recommendations.tips.push('Explore alternative social media platforms that prioritize user control');
+  }
+  
+  // Developer tools
+  if (userAnswers.q9 === 'advanced' || userAnswers.q9 === 'expert') {
+    recommendations.developerTools = true;
+  }
+  
+  // Always add general tips
+  if (recommendations.tips.length === 0) {
+    recommendations.tips.push('Browse our complete resources list for more tools');
+    recommendations.tips.push('Join our community to share your experiences');
+  }
+  
+  return recommendations;
+}
+
+function restartQuiz() {
+  currentQuestionIndex = 0;
+  userAnswers = {};
+  document.getElementById('quiz-results').classList.remove('active');
+  document.getElementById('quiz-welcome').classList.add('active');
+}
+</script>
+
+<style>
+.quiz-section {
+  display: none;
+}
+
+.quiz-section.active {
+  display: block;
+}
+
+.quiz-progress {
+  margin-bottom: 2rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #45a049);
+  transition: width 0.3s ease;
+}
+
+.question-counter {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.question {
+  margin-bottom: 2rem;
+}
+
+.question-text {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.option-label {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.option-label:hover {
+  border-color: #4CAF50;
+  background-color: #f5f5f5;
+}
+
+.option-label input[type="checkbox"],
+.option-label input[type="radio"] {
+  margin-right: 1rem;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.option-label input:checked + span {
+  font-weight: 600;
+  color: #4CAF50;
+}
+
+.quiz-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.results-summary {
+  line-height: 1.8;
+}
+
+.recommendation-category {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #4CAF50;
+}
+
+.recommendation-category h4 {
+  margin-top: 0;
+  color: #333;
+}
+
+.recommendation-category ul {
+  margin-bottom: 0;
+}
+
+.recommendation-category li {
+  margin-bottom: 0.8rem;
+}
+
+#privacy-note {
+  padding: 1rem;
+  background-color: #e8f5e9;
+  border-radius: 8px;
+  border-left: 4px solid #4CAF50;
+  margin: 1.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .quiz-navigation {
+    flex-direction: column;
+  }
+  
+  .quiz-navigation button {
+    width: 100%;
+  }
+}
+</style>

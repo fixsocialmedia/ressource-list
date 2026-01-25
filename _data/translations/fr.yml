@@ -1,0 +1,183 @@
+# French translations
+site:
+  title: "Fix Social Media - Liste de Ressources"
+  description: "Une collection organisée d'outils et de ressources pour améliorer la qualité des réseaux sociaux et lutter contre le contenu généré par IA"
+  
+nav:
+  home: "Accueil"
+  resources: "Ressources"
+  quiz: "Quiz"
+  framework: "Cadre"
+  contributing: "Contribuer"
+  about: "À propos"
+  github: "GitHub"
+  
+home:
+  hero_title: "Réparer les Réseaux Sociaux"
+  hero_subtitle: "Reprenez le contrôle de votre bien-être numérique avec des outils et ressources organisés"
+  browse_resources: "Parcourir les Ressources"
+  learn_framework: "En savoir plus sur le Cadre"
+  
+  users_title: "Pour les Utilisateurs"
+  users_desc: "Trouvez des outils pour détecter le contenu généré par IA, filtrer le spam et améliorer votre expérience des réseaux sociaux."
+  users_link: "Explorer les Outils →"
+  
+  contributors_title: "Pour les Contributeurs"
+  contributors_desc: "Rejoignez notre communauté open-source pour organiser des ressources et développer de nouvelles solutions."
+  contributors_link: "Commencer à Contribuer →"
+  
+  policymakers_title: "Pour les Décideurs Politiques"
+  policymakers_desc: "Accédez à la recherche, aux cadres et aux outils d'analyse pour comprendre les défis des réseaux sociaux."
+  policymakers_link: "Voir le Cadre →"
+  
+  cta_title: "Prêt à Reprendre le Contrôle?"
+  cta_desc: "Rejoignez des milliers d'utilisateurs améliorant leur expérience des réseaux sociaux"
+  view_github: "Voir sur GitHub"
+  
+quiz:
+  title: "Évaluation du Comportement sur les Réseaux Sociaux"
+  subtitle: "Découvrez des outils personnalisés pour améliorer votre bien-être numérique"
+  welcome_heading: "Bienvenue au Quiz d'Évaluation des Réseaux Sociaux"
+  welcome_description: "Ce quiz vous aidera à:"
+  welcome_list_1: "Comprendre vos habitudes sur les réseaux sociaux"
+  welcome_list_2: "Identifier les domaines où vous souhaitez apporter des changements"
+  welcome_list_3: "Recevoir des recommandations d'outils personnalisées"
+  welcome_list_4: "Reprendre le contrôle de votre bien-être numérique"
+  privacy_note: "Note de Confidentialité:"
+  privacy_text: "Toutes les réponses sont traitées localement dans votre navigateur. Aucune donnée n'est collectée ou stockée."
+  start_btn: "Commencer l'Évaluation"
+  prev_btn: "Précédent"
+  next_btn: "Suivant"
+  see_results_btn: "Voir les Résultats"
+  results_heading: "Vos Recommandations Personnalisées"
+  restart_btn: "Refaire le Quiz"
+  browse_resources_btn: "Parcourir Toutes les Ressources"
+  question_text: "Question"
+  of_text: "sur"
+  
+  # Quiz questions
+  q1:
+    text: "Quelles plateformes de réseaux sociaux utilisez-vous actuellement? (Sélectionnez toutes celles qui s'appliquent)"
+    facebook: "Facebook"
+    instagram: "Instagram"
+    twitter: "Twitter/X"
+    tiktok: "TikTok"
+    youtube: "YouTube"
+    reddit: "Reddit"
+    linkedin: "LinkedIn"
+    other: "Autre"
+  
+  q2:
+    text: "Combien de temps passez-vous généralement sur les réseaux sociaux par jour?"
+    less_1h: "Moins d'une heure"
+    1_2h: "1-2 heures"
+    2_4h: "2-4 heures"
+    4_6h: "4-6 heures"
+    more_6h: "Plus de 6 heures"
+  
+  q3:
+    text: "Qu'est-ce qui vous préoccupe le plus dans votre utilisation des réseaux sociaux? (Sélectionnez toutes celles qui s'appliquent)"
+    time_waste: "Perte de temps"
+    mental_health: "Impact sur la santé mentale"
+    privacy: "Préoccupations liées à la vie privée"
+    ai_content: "Contenu généré par IA et spam"
+    distraction: "Difficulté à se concentrer sur les tâches importantes"
+    comparison: "Me comparer aux autres"
+    algorithm: "Être contrôlé par les algorithmes"
+  
+  q4:
+    text: "Quelles fonctionnalités souhaitez-vous mieux contrôler? (Sélectionnez toutes celles qui s'appliquent)"
+    feed: "Fil d'actualité/Fil d'accueil"
+    recommendations: "Recommandations et suggestions"
+    notifications: "Notifications"
+    autoplay: "Lecture automatique des vidéos"
+    infinite_scroll: "Défilement infini"
+    comments: "Sections de commentaires"
+    ads: "Publicités"
+  
+  q5:
+    text: "Que pensez-vous du contenu généré par IA sur les réseaux sociaux?"
+    very_concerned: "Très préoccupé - Je veux l'éviter"
+    somewhat_concerned: "Quelque peu préoccupé - Je veux l'identifier"
+    neutral: "Neutre - Cela ne me dérange pas"
+    positive: "Positif - Je trouve une partie utile"
+  
+  q6:
+    text: "Quel type de contenu trouvez-vous le plus distrayant ou addictif? (Sélectionnez toutes celles qui s'appliquent)"
+    short_videos: "Vidéos courtes (TikTok, Reels, Shorts)"
+    clickbait: "Titres accrocheurs"
+    controversy: "Contenu controversé ou provocant"
+    news: "Actualités de dernière minute et sujets tendance"
+    comparison_content: "Contenu de style de vie/comparaison"
+    entertainment: "Divertissement et mèmes"
+  
+  q7:
+    text: "Quelles fonctionnalités de confidentialité sont importantes pour vous? (Sélectionnez toutes celles qui s'appliquent)"
+    tracking_protection: "Bloquer le suivi entre les sites"
+    data_deletion: "Supprimer automatiquement les données de navigation"
+    alternative_frontends: "Utiliser des interfaces alternatives axées sur la confidentialité"
+    anonymous_browsing: "Naviguer anonymement"
+    minimal_data: "Minimiser la collecte de données"
+  
+  q8:
+    text: "Quel(s) navigateur(s) utilisez-vous principalement? (Sélectionnez toutes celles qui s'appliquent)"
+    chrome: "Google Chrome"
+    firefox: "Mozilla Firefox"
+    safari: "Safari"
+    edge: "Microsoft Edge"
+    brave: "Brave"
+    other: "Autre"
+  
+  q9:
+    text: "Quel est votre niveau de compétence technique?"
+    beginner: "Débutant - Je préfère des outils simples avec une configuration minimale"
+    intermediate: "Intermédiaire - Je peux installer des extensions et configurer les paramètres"
+    advanced: "Avancé - Je peux utiliser des API et des outils de développement"
+    expert: "Expert - Je peux créer mes propres solutions"
+  
+  q10:
+    text: "Quel est votre objectif principal pour améliorer votre expérience des réseaux sociaux?"
+    reduce_time: "Réduire le temps passé sur les réseaux sociaux"
+    quality_content: "Améliorer la qualité du contenu"
+    protect_privacy: "Protéger ma vie privée"
+    mental_health: "Améliorer la santé mentale et le bien-être"
+    productivity: "Augmenter la productivité et la concentration"
+    control: "Reprendre le contrôle des algorithmes"
+
+about:
+  title: "À propos de Fix Social Media"
+  subtitle: "Notre mission pour améliorer le bien-être numérique"
+  mission: "Notre Mission"
+  vision: "Notre Vision"
+  problem: "Le Problème que Nous Abordons"
+  solution: "Notre Solution"
+  who_we_serve: "Qui Nous Servons"
+  principles: "Nos Principes"
+  history: "Historique du Projet"
+  innovation: "Ce Qui Nous Rend Différents"
+  future: "Vers l'Avenir"
+  license: "Licence"
+  contact: "Nous Contacter"
+  
+contributing:
+  title: "Guide de Contribution"
+  subtitle: "Aidez-nous à construire un meilleur écosystème de réseaux sociaux"
+  ways_to_contribute: "Façons de Contribuer"
+  before_you_start: "Avant de Commencer"
+  how_to_add_resource: "Comment Ajouter une Ressource"
+  resource_criteria: "Critères de Qualité des Ressources"
+  taxonomy_contributions: "Contribuer aux Taxonomies"
+  code_of_conduct: "Code de Conduite"
+  review_process: "Processus d'Examen"
+  recognition: "Reconnaissance"
+  questions: "Questions ou Besoin d'Aide?"
+  ready_to_contribute: "Prêt à Contribuer?"
+  go_to_github: "Aller sur GitHub"
+  
+footer:
+  about: "À propos"
+  quick_links: "Liens Rapides"
+  license: "Licence"
+  license_text: "Ce projet est sous licence"
+  apache_license: "Licence Apache 2.0"
+  rights: "Tous droits réservés"

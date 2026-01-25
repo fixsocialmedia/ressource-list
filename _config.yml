@@ -3,6 +3,7 @@ title: "Fix Social Media - Resource List"
 description: "A curated collection of tools and resources to improve social media quality and combat AI-generated content"
 baseurl: "/ressource-list"
 url: "https://fixsocialmedia.github.io"
+lang: en
 
 # Build settings
 markdown: kramdown
@@ -28,6 +29,8 @@ navigation:
     url: /
   - title: Resources
     url: /resources
+  - title: Quiz
+    url: /quiz
   - title: Framework
     url: /framework
   - title: Contributing

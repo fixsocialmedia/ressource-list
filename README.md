@@ -56,6 +56,26 @@ All resources are organized in the [RESOURCES.md](RESOURCES.md) file, categorize
 - **Research & Analysis** - Academic papers, studies, and analysis tools
 - **Community Resources** - Forums, communities, and discussion groups
 
+## 🌍 Multilingual Support
+
+The website now supports multiple languages to make resources accessible to users and policymakers worldwide:
+
+- **English** - Default language
+- **Français** - French translation
+- **Español** - Spanish translation
+
+See [I18N.md](I18N.md) for details about the internationalization system and how to contribute translations.
+
+## 🧩 Social Media Behavior Quiz
+
+Take our interactive quiz to:
+- Assess your social media usage patterns
+- Identify areas where you'd like to make changes
+- Receive personalized tool recommendations
+- Discover resources tailored to your needs
+
+Visit the [Quiz page](https://fixsocialmedia.github.io/ressource-list/quiz) to get started!
+
 ## 🤝 Contributing
 
 We welcome contributions from everyone! Whether you're adding a new tool, updating existing information, or improving documentation, your help is appreciated.
@@ -68,6 +88,14 @@ Please read our [CONTRIBUTING.md](CONTRIBUTING.md) guide to get started.
 2. Add your resource to [RESOURCES.md](RESOURCES.md) in the appropriate category
 3. Follow the formatting guidelines
 4. Submit a pull request
+
+### Project Transfers
+
+Have you built a tool that aligns with our mission? Consider transferring it to the Fix Social Media organization for increased visibility, community support, and long-term sustainability. Learn more in our [Contributing Guide](CONTRIBUTING.md#transferring-your-project-to-fix-social-media).
+
+### Future Vision
+
+As Fix Social Media achieves impact and traction, we are working towards establishing a mission-led foundation. This foundation would provide sustainable funding, resources, and support for open-source projects in the digital well-being space. Learn more in our [About page](about.html#future).
 
 ## 📄 License
 
