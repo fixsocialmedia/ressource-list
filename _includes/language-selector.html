@@ -1,0 +1,134 @@
+{% assign lang = page.lang | default: site.lang | default: "en" %}
+{% assign t = site.data.translations[lang] %}
+
+<div class="language-selector">
+  <button class="lang-toggle" aria-label="Select language" id="lang-toggle">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="2" y1="12" x2="22" y2="12"></line>
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+    </svg>
+    <span class="current-lang">{{ lang | upcase }}</span>
+  </button>
+  <div class="lang-dropdown" id="lang-dropdown">
+    <a href="{{ page.url | remove: '/fr' | remove: '/es' }}" class="lang-option {% if lang == 'en' %}active{% endif %}" data-lang="en">
+      English
+    </a>
+    <a href="/fr{{ page.url }}" class="lang-option {% if lang == 'fr' %}active{% endif %}" data-lang="fr">
+      Français
+    </a>
+    <a href="/es{{ page.url }}" class="lang-option {% if lang == 'es' %}active{% endif %}" data-lang="es">
+      Español
+    </a>
+  </div>
+</div>
+
+<style>
+.language-selector {
+  position: relative;
+  display: inline-block;
+}
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.lang-toggle:hover {
+  border-color: #4CAF50;
+  background-color: #f5f5f5;
+}
+
+.lang-toggle svg {
+  color: #666;
+}
+
+.current-lang {
+  color: #333;
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  display: none;
+  z-index: 1000;
+}
+
+.lang-dropdown.show {
+  display: block;
+}
+
+.lang-option {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.lang-option:hover {
+  background-color: #f5f5f5;
+}
+
+.lang-option.active {
+  background-color: #e8f5e9;
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+.lang-option:first-child {
+  border-radius: 6px 6px 0 0;
+}
+
+.lang-option:last-child {
+  border-radius: 0 0 6px 6px;
+}
+
+@media (max-width: 768px) {
+  .language-selector {
+    margin-top: 1rem;
+  }
+  
+  .lang-dropdown {
+    right: auto;
+    left: 0;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const langToggle = document.getElementById('lang-toggle');
+  const langDropdown = document.getElementById('lang-dropdown');
+  
+  if (langToggle && langDropdown) {
+    langToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      langDropdown.classList.toggle('show');
+    });
+    
+    document.addEventListener('click', function() {
+      langDropdown.classList.remove('show');
+    });
+    
+    langDropdown.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+  }
+});
+</script>

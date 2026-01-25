@@ -1,0 +1,183 @@
+# English translations
+site:
+  title: "Fix Social Media - Resource List"
+  description: "A curated collection of tools and resources to improve social media quality and combat AI-generated content"
+  
+nav:
+  home: "Home"
+  resources: "Resources"
+  quiz: "Quiz"
+  framework: "Framework"
+  contributing: "Contributing"
+  about: "About"
+  github: "GitHub"
+  
+home:
+  hero_title: "Fix Social Media"
+  hero_subtitle: "Reclaim your digital well-being with curated tools and resources"
+  browse_resources: "Browse Resources"
+  learn_framework: "Learn About Framework"
+  
+  users_title: "For Users"
+  users_desc: "Find tools to detect AI-generated content, filter spam, and enhance your social media experience."
+  users_link: "Explore Tools →"
+  
+  contributors_title: "For Contributors"
+  contributors_desc: "Join our open-source community to help curate resources and develop new solutions."
+  contributors_link: "Start Contributing →"
+  
+  policymakers_title: "For Policymakers"
+  policymakers_desc: "Access research, frameworks, and analysis tools to understand social media challenges."
+  policymakers_link: "View Framework →"
+  
+  cta_title: "Ready to Take Control?"
+  cta_desc: "Join thousands of users improving their social media experience"
+  view_github: "View on GitHub"
+  
+quiz:
+  title: "Social Media Behavior Assessment"
+  subtitle: "Discover personalized tools to improve your digital well-being"
+  welcome_heading: "Welcome to the Social Media Assessment Quiz"
+  welcome_description: "This quiz will help you:"
+  welcome_list_1: "Understand your social media behavior patterns"
+  welcome_list_2: "Identify areas where you'd like to make changes"
+  welcome_list_3: "Receive personalized tool recommendations"
+  welcome_list_4: "Take control of your digital well-being"
+  privacy_note: "Privacy Note:"
+  privacy_text: "All responses are processed locally in your browser. No data is collected or stored."
+  start_btn: "Start Assessment"
+  prev_btn: "Previous"
+  next_btn: "Next"
+  see_results_btn: "See Results"
+  results_heading: "Your Personalized Recommendations"
+  restart_btn: "Retake Quiz"
+  browse_resources_btn: "Browse All Resources"
+  question_text: "Question"
+  of_text: "of"
+  
+  # Quiz questions
+  q1:
+    text: "What social media platforms do you currently use? (Select all that apply)"
+    facebook: "Facebook"
+    instagram: "Instagram"
+    twitter: "Twitter/X"
+    tiktok: "TikTok"
+    youtube: "YouTube"
+    reddit: "Reddit"
+    linkedin: "LinkedIn"
+    other: "Other"
+  
+  q2:
+    text: "How much time do you typically spend on social media per day?"
+    less_1h: "Less than 1 hour"
+    1_2h: "1-2 hours"
+    2_4h: "2-4 hours"
+    4_6h: "4-6 hours"
+    more_6h: "More than 6 hours"
+  
+  q3:
+    text: "What concerns you most about your social media use? (Select all that apply)"
+    time_waste: "Wasting too much time"
+    mental_health: "Impact on mental health"
+    privacy: "Privacy concerns"
+    ai_content: "AI-generated content and spam"
+    distraction: "Difficulty focusing on important tasks"
+    comparison: "Comparing myself to others"
+    algorithm: "Being controlled by algorithms"
+  
+  q4:
+    text: "Which features would you like to have more control over? (Select all that apply)"
+    feed: "News feed/Home feed"
+    recommendations: "Recommendations and suggestions"
+    notifications: "Notifications"
+    autoplay: "Autoplay videos"
+    infinite_scroll: "Infinite scroll"
+    comments: "Comments sections"
+    ads: "Advertisements"
+  
+  q5:
+    text: "How do you feel about AI-generated content on social media?"
+    very_concerned: "Very concerned - I want to avoid it"
+    somewhat_concerned: "Somewhat concerned - I want to identify it"
+    neutral: "Neutral - I don't mind either way"
+    positive: "Positive - I find some of it useful"
+  
+  q6:
+    text: "What type of content do you find most distracting or addictive? (Select all that apply)"
+    short_videos: "Short-form videos (TikTok, Reels, Shorts)"
+    clickbait: "Clickbait headlines"
+    controversy: "Controversial or outrage-inducing content"
+    news: "Breaking news and trending topics"
+    comparison_content: "Lifestyle/comparison content"
+    entertainment: "Entertainment and memes"
+  
+  q7:
+    text: "What privacy features are important to you? (Select all that apply)"
+    tracking_protection: "Block tracking across sites"
+    data_deletion: "Automatically delete browsing data"
+    alternative_frontends: "Use privacy-focused alternative frontends"
+    anonymous_browsing: "Browse anonymously"
+    minimal_data: "Minimize data collection"
+  
+  q8:
+    text: "What browser(s) do you primarily use? (Select all that apply)"
+    chrome: "Google Chrome"
+    firefox: "Mozilla Firefox"
+    safari: "Safari"
+    edge: "Microsoft Edge"
+    brave: "Brave"
+    other: "Other"
+  
+  q9:
+    text: "What is your technical skill level?"
+    beginner: "Beginner - I prefer simple tools with minimal setup"
+    intermediate: "Intermediate - I can install extensions and configure settings"
+    advanced: "Advanced - I can use APIs and developer tools"
+    expert: "Expert - I can build my own solutions"
+  
+  q10:
+    text: "What is your primary goal for improving your social media experience?"
+    reduce_time: "Reduce time spent on social media"
+    quality_content: "Improve content quality"
+    protect_privacy: "Protect my privacy"
+    mental_health: "Improve mental health and well-being"
+    productivity: "Increase productivity and focus"
+    control: "Take back control from algorithms"
+
+about:
+  title: "About Fix Social Media"
+  subtitle: "Our mission to improve digital well-being"
+  mission: "Our Mission"
+  vision: "Our Vision"
+  problem: "The Problem We're Addressing"
+  solution: "Our Solution"
+  who_we_serve: "Who We Serve"
+  principles: "Our Principles"
+  history: "Project History"
+  innovation: "What Makes Us Different"
+  future: "Looking Forward"
+  license: "License"
+  contact: "Get in Touch"
+  
+contributing:
+  title: "Contributing Guide"
+  subtitle: "Help us build a better social media ecosystem"
+  ways_to_contribute: "Ways to Contribute"
+  before_you_start: "Before You Start"
+  how_to_add_resource: "How to Add a Resource"
+  resource_criteria: "Resource Quality Criteria"
+  taxonomy_contributions: "Contributing to Taxonomies"
+  code_of_conduct: "Code of Conduct"
+  review_process: "Review Process"
+  recognition: "Recognition"
+  questions: "Questions or Help Needed?"
+  ready_to_contribute: "Ready to Contribute?"
+  go_to_github: "Go to GitHub"
+  
+footer:
+  about: "About"
+  quick_links: "Quick Links"
+  license: "License"
+  license_text: "This project is licensed under the"
+  apache_license: "Apache License 2.0"
+  rights: "All rights reserved"
