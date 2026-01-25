@@ -28,6 +28,8 @@ navigation:
     url: /
   - title: Resources
     url: /resources
+  - title: Quiz
+    url: /quiz
   - title: Framework
     url: /framework
   - title: Contributing
