@@ -31,6 +31,8 @@ navigation:
     url: /resources
   - title: Quiz
     url: /quiz
+  - title: Wizard
+    url: /wizard
   - title: Framework
     url: /framework
   - title: Contributing
