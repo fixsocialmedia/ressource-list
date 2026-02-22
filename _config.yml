@@ -29,16 +29,16 @@ navigation:
     url: /
   - title: Resources
     url: /resources
-  - title: Quiz
-    url: /quiz
-  - title: Wizard
-    url: /wizard
   - title: Framework
     url: /framework
   - title: Contributing
     url: /contributing
   - title: About
     url: /about
+  - title: Quiz
+    url: /quiz
+  - title: Wizard
+    url: /wizard
 
 # Additional settings
 plugins:

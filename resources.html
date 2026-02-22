@@ -6,19 +6,31 @@ title: Resources
 <div class="page-header">
   <div class="container">
     <h1>Resources</h1>
-    <p>Curated tools and resources to improve social media quality</p>
+    <p>Curated tools and resources to improve your social media experience</p>
   </div>
 </div>
 
 <div class="search-filter-bar">
   <div class="container">
-    <div class="search-box">
-      <input type="text" id="resource-search" class="search-input" placeholder="Search resources...">
+    <div class="filter-row">
+      <div class="search-box">
+        <input type="text" id="resource-search" class="search-input" placeholder="Search resources...">
+      </div>
+      <div class="platform-filter-wrap">
+        <label for="platform-filter">Platform:</label>
+        <select id="platform-filter" class="platform-select">
+          <option value="">All Platforms</option>
+          <option value="chrome_desktop">Chrome (Desktop)</option>
+          <option value="firefox_desktop">Firefox (Desktop)</option>
+          <option value="firefox_android">Firefox (Android)</option>
+          <option value="edge_desktop">Edge (Desktop)</option>
+          <option value="safari">Safari (macOS / iOS)</option>
+        </select>
+      </div>
     </div>
     <div class="filter-chips">
       <span class="chip" data-category="framework">🧠 Framework</span>
       <span class="chip" data-category="browser-extensions">🌐 Browser Extensions</span>
-      <span class="chip" data-category="mobile">📱 Mobile</span>
       <span class="chip" data-category="developer">🔧 Developer Tools</span>
       <span class="chip" data-category="research">📊 Research</span>
       <span class="chip" data-category="privacy">🛡️ Privacy</span>
@@ -30,8 +42,7 @@ title: Resources
   <div class="resource-category" id="framework" data-category="framework">
     <h2>🧠 Cognitive Awareness Framework</h2>
     <p>Resources and tools for understanding and moderating cognitively addictive content patterns.</p>
-    
-    <h3>Framework Documentation</h3>
+
     <table class="resource-table">
       <thead>
         <tr>
@@ -43,22 +54,22 @@ title: Resources
       </thead>
       <tbody>
         <tr>
-          <td>Cognitive Awareness Framework</td>
+          <td>📄 Cognitive Awareness Framework</td>
           <td>Complete framework for identifying and moderating cognitively addictive content patterns</td>
           <td>Documentation</td>
           <td><a href="{{ '/framework' | relative_url }}">View</a></td>
         </tr>
         <tr>
-          <td>Social Media Hooks Taxonomy</td>
+          <td>🪝 Social Media Hooks Taxonomy</td>
           <td>Machine-readable taxonomy of attention-capture techniques</td>
           <td>JSON</td>
-          <td><a href="https://github.com/fixsocialmedia/ressource-list/blob/main/taxonomies/social-media-hooks.json" target="_blank">Download</a></td>
+          <td><a href="https://github.com/fixsocialmedia/ressource-list/blob/main/taxonomies/social-media-hooks.json" target="_blank" rel="noopener">Download</a></td>
         </tr>
         <tr>
-          <td>Cognitively Addictive Themes Taxonomy</td>
+          <td>🎭 Cognitively Addictive Themes Taxonomy</td>
           <td>Machine-readable taxonomy of engagement patterns</td>
           <td>JSON</td>
-          <td><a href="https://github.com/fixsocialmedia/ressource-list/blob/main/taxonomies/cognitively-addictive-themes.json" target="_blank">Download</a></td>
+          <td><a href="https://github.com/fixsocialmedia/ressource-list/blob/main/taxonomies/cognitively-addictive-themes.json" target="_blank" rel="noopener">Download</a></td>
         </tr>
       </tbody>
     </table>
@@ -66,99 +77,31 @@ title: Resources
 
   <div class="resource-category" id="browser-extensions" data-category="browser-extensions">
     <h2>🌐 Browser Extensions</h2>
-    <p>Extensions for various web browsers to enhance social media experience.</p>
-    
-    <table class="resource-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Supported Browsers</th>
-          <th>Link</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Control Panel for Twitter</td>
-          <td>Fix Twitter/X UI, force chronological timeline, and remove algorithmic bloat</td>
-          <td>Chrome, Firefox</td>
-          <td><a href="https://github.com/insin/control-panel-for-twitter" target="_blank">GitHub</a></td>
-        </tr>
-        <tr>
-          <td>SponsorBlock</td>
-          <td>Crowdsourced extension to skip sponsor segments, intros, and subscribes on YouTube</td>
-          <td>Chrome, Firefox, Safari, Edge</td>
-          <td><a href="https://github.com/ajayyy/SponsorBlock" target="_blank">GitHub</a></td>
-        </tr>
-        <tr>
-          <td>DeArrow</td>
-          <td>Crowdsourced replacement for sensationalist YouTube titles and thumbnails</td>
-          <td>Chrome, Firefox, Safari, Edge</td>
-          <td><a href="https://github.com/ajayyy/DeArrow" target="_blank">GitHub</a></td>
-        </tr>
-        <tr>
-          <td>Improve YouTube!</td>
-          <td>Comprehensive extension for tweaking YouTube player, layout, and playback settings</td>
-          <td>Chrome, Firefox, Edge, Opera</td>
-          <td><a href="https://github.com/code-charity/youtube" target="_blank">GitHub</a></td>
-        </tr>
-        <tr>
-          <td>Unhook</td>
-          <td>Removes YouTube recommended videos, comments, and sidebar to prevent distraction</td>
-          <td>Chrome, Firefox</td>
-          <td><a href="https://github.com/kxia5/Unhook" target="_blank">GitHub</a></td>
-        </tr>
-        <tr>
-          <td>Untrapped</td>
-          <td>Similar to Unhook; hides YouTube suggestions and customizes UI for focus</td>
-          <td>Chrome</td>
-          <td><a href="https://github.com/KishanKokal/Untrapped" target="_blank">GitHub</a></td>
-        </tr>
-        <tr>
-          <td>News Feed Eradicator</td>
-          <td>Replaces news feeds on FB, Twitter, LinkedIn, etc., with an inspirational quote</td>
-          <td>Chrome, Firefox, Edge</td>
-          <td><a href="https://github.com/jordwest/news-feed-eradicator" target="_blank">GitHub</a></td>
-        </tr>
-        <tr>
-          <td>Unhook for Reddit</td>
-          <td>Hides distracting elements (feeds, sidebars) on Reddit</td>
-          <td>Chrome, Firefox</td>
-          <td><a href="https://github.com/mrandal/unhook-for-reddit" target="_blank">GitHub</a></td>
-        </tr>
-        <tr>
-          <td>Social Feed Blocker</td>
-          <td>Chrome extension to block social media feeds to improve productivity</td>
-          <td>Chrome</td>
-          <td><a href="https://github.com/ganganimaulik/social-feed-blocker" target="_blank">GitHub</a></td>
-        </tr>
-        <tr>
-          <td>Feed Remover</td>
-          <td>Lightweight extension to remove feeds from Facebook and YouTube</td>
-          <td>Chrome, Firefox</td>
-          <td><a href="https://github.com/kwkr/feed-remover" target="_blank">GitHub</a></td>
-        </tr>
-        <tr>
-          <td>Cleanup Feed</td>
-          <td>Removes unwanted posts from Facebook News Feed based on keywords</td>
-          <td>Chrome, Firefox</td>
-          <td><a href="https://github.com/mskian/cleanup-feed" target="_blank">GitHub</a></td>
-        </tr>
-        <tr>
-          <td>Libredirect</td>
-          <td>Middleware extension to redirect requests to privacy frontends</td>
-          <td>Browser Extension</td>
-          <td><a href="https://github.com/libredirect/libredirect" target="_blank">GitHub</a></td>
-        </tr>
-      </tbody>
-    </table>
+    <p>Extensions to improve your browser-based social media experience. Use the <strong>Platform</strong> filter above to find extensions compatible with your browser.</p>
+
+    <div class="resources-grid">
+      {% for ext in site.data.resources.browser_extensions %}
+      <div class="resource-card" data-platforms="{{ ext.platforms | join: ' ' }}" data-name="{{ ext.name | downcase }}" data-description="{{ ext.description | downcase }}">
+        <div class="resource-card-header">
+          <span class="resource-icon">{{ ext.icon }}</span>
+          <h3>{{ ext.name }}</h3>
+        </div>
+        <p class="resource-description">{{ ext.description }}</p>
+        <div class="install-buttons">
+          {% for btn in ext.install %}
+          <a href="{{ btn.url }}" class="install-btn install-btn--{{ btn.browser }}" target="_blank" rel="noopener noreferrer" title="Install for {{ btn.label }}">{{ btn.label }}</a>
+          {% endfor %}
+          <a href="{{ ext.github }}" class="install-btn install-btn--github" target="_blank" rel="noopener noreferrer" title="View source on GitHub">GitHub</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 
   <div class="resource-category" id="developer-tools" data-category="developer">
     <h2>🔧 API & Developer Tools</h2>
     <p>Tools and APIs for developers to integrate content detection and filtering.</p>
-    
-    <h3>Self-Hosted Solutions</h3>
+
     <table class="resource-table">
       <thead>
         <tr>
@@ -170,34 +113,34 @@ title: Resources
       </thead>
       <tbody>
         <tr>
-          <td>Bridgy Fed</td>
+          <td>🌉 Bridgy Fed</td>
           <td>Bridge between decentralized protocols (ActivityPub, AT Protocol, Webmention)</td>
           <td>Python</td>
-          <td><a href="https://github.com/snarfed/bridgy-fed" target="_blank">GitHub</a></td>
+          <td><a href="https://github.com/snarfed/bridgy-fed" target="_blank" rel="noopener">GitHub</a></td>
         </tr>
         <tr>
-          <td>Mastodon</td>
+          <td>🐘 Mastodon</td>
           <td>Self-hosted, federated microblogging server (ActivityPub)</td>
           <td>Ruby</td>
-          <td><a href="https://github.com/mastodon/mastodon" target="_blank">GitHub</a></td>
+          <td><a href="https://github.com/mastodon/mastodon" target="_blank" rel="noopener">GitHub</a></td>
         </tr>
         <tr>
-          <td>Arroba</td>
+          <td>🦋 Arroba</td>
           <td>Python implementation of Bluesky PDS and AT Protocol</td>
           <td>Python</td>
-          <td><a href="https://github.com/snarfed/arroba" target="_blank">GitHub</a></td>
+          <td><a href="https://github.com/snarfed/arroba" target="_blank" rel="noopener">GitHub</a></td>
         </tr>
         <tr>
-          <td>Nipy Bridge</td>
+          <td>🔗 Nipy Bridge</td>
           <td>Nostr to ActivityPub/Bluesky bridge (Local relay)</td>
           <td>Python</td>
-          <td><a href="https://github.com/0n4t3/nipy-bridge" target="_blank">GitHub</a></td>
+          <td><a href="https://github.com/0n4t3/nipy-bridge" target="_blank" rel="noopener">GitHub</a></td>
         </tr>
         <tr>
-          <td>MmuoKọ Connect</td>
+          <td>🧪 MmuoKọ Connect</td>
           <td>Experimental framework for "tonal" social clusters (Conceptual)</td>
           <td>JavaScript</td>
-          <td><a href="https://github.com/obinexus/mmuko-connect" target="_blank">GitHub</a></td>
+          <td><a href="https://github.com/obinexus/mmuko-connect" target="_blank" rel="noopener">GitHub</a></td>
         </tr>
       </tbody>
     </table>
@@ -206,8 +149,7 @@ title: Resources
   <div class="resource-category" id="research" data-category="research">
     <h2>📊 Research & Analysis</h2>
     <p>Academic papers, studies, and analysis tools related to social media quality.</p>
-    
-    <h3>Analysis Tools</h3>
+
     <table class="resource-table">
       <thead>
         <tr>
@@ -219,34 +161,34 @@ title: Resources
       </thead>
       <tbody>
         <tr>
-          <td>Citizen Browser (FB)</td>
+          <td>🔍 Citizen Browser (FB)</td>
           <td>Code for The Markup's Citizen Browser project (Facebook Political Groups)</td>
           <td>Algorithmic Auditing</td>
-          <td><a href="https://github.com/the-markup/citizen-browser-fb-political-groups" target="_blank">GitHub</a></td>
+          <td><a href="https://github.com/the-markup/citizen-browser-fb-political-groups" target="_blank" rel="noopener">GitHub</a></td>
         </tr>
         <tr>
-          <td>Monitoring Instagram</td>
+          <td>📸 Monitoring Instagram</td>
           <td>Browser plugin and backend for crowd-based Instagram monitoring (AlgorithmWatch)</td>
           <td>Algorithmic Auditing</td>
-          <td><a href="https://github.com/algorithmwatch/monitoring-instagram" target="_blank">GitHub</a></td>
+          <td><a href="https://github.com/algorithmwatch/monitoring-instagram" target="_blank" rel="noopener">GitHub</a></td>
         </tr>
         <tr>
-          <td>Story Autocomplete</td>
+          <td>🔎 Story Autocomplete</td>
           <td>Tool to audit search engine autocomplete suggestions</td>
           <td>Algorithmic Auditing</td>
-          <td><a href="https://github.com/algorithmwatch/story-autocomplete-check" target="_blank">GitHub</a></td>
+          <td><a href="https://github.com/algorithmwatch/story-autocomplete-check" target="_blank" rel="noopener">GitHub</a></td>
         </tr>
         <tr>
-          <td>Automated Discrimination</td>
+          <td>⚖️ Automated Discrimination</td>
           <td>Experiment on ad delivery skew in FB and Google</td>
           <td>Algorithmic Auditing</td>
-          <td><a href="https://github.com/algorithmwatch/story-automated-discrimination" target="_blank">GitHub</a></td>
+          <td><a href="https://github.com/algorithmwatch/story-automated-discrimination" target="_blank" rel="noopener">GitHub</a></td>
         </tr>
         <tr>
-          <td>Transparency Standard</td>
+          <td>📋 Transparency Standard</td>
           <td>Standard for recording algorithmic usage in public sector (UK)</td>
           <td>Policy/Standards</td>
-          <td><a href="https://github.com/co-cddo/algorithmic-transparency-recording-standard" target="_blank">GitHub</a></td>
+          <td><a href="https://github.com/co-cddo/algorithmic-transparency-recording-standard" target="_blank" rel="noopener">GitHub</a></td>
         </tr>
       </tbody>
     </table>
@@ -254,9 +196,8 @@ title: Resources
 
   <div class="resource-category" id="privacy" data-category="privacy">
     <h2>🛡️ Privacy & Security Tools</h2>
-    <p>Tools that focus on privacy and security aspects of social media usage.</p>
-    
-    <h3>Privacy Enhancing Tools</h3>
+    <p>Privacy-respecting alternative frontends for popular social media platforms.</p>
+
     <table class="resource-table">
       <thead>
         <tr>
@@ -268,52 +209,52 @@ title: Resources
       </thead>
       <tbody>
         <tr>
-          <td>Redlib</td>
+          <td>🔴 Redlib</td>
           <td>Private, high-performance, Rust-based frontend for Reddit (Fork of Libreddit)</td>
           <td>Web</td>
-          <td><a href="https://github.com/redlib-org/redlib" target="_blank">GitHub</a></td>
+          <td><a href="https://github.com/redlib-org/redlib" target="_blank" rel="noopener">GitHub</a></td>
         </tr>
         <tr>
-          <td>Invidious</td>
+          <td>▶️ Invidious</td>
           <td>Alternative front-end to YouTube. Lightweight, no ads, no tracking</td>
           <td>Web</td>
-          <td><a href="https://github.com/iv-org/invidious" target="_blank">GitHub</a></td>
+          <td><a href="https://github.com/iv-org/invidious" target="_blank" rel="noopener">GitHub</a></td>
         </tr>
         <tr>
-          <td>Piped</td>
+          <td>🔧 Piped</td>
           <td>Privacy-friendly YouTube frontend which is efficient by design</td>
           <td>Web</td>
-          <td><a href="https://github.com/TeamPiped/Piped" target="_blank">GitHub</a></td>
+          <td><a href="https://github.com/TeamPiped/Piped" target="_blank" rel="noopener">GitHub</a></td>
         </tr>
         <tr>
-          <td>Bibliogram</td>
+          <td>📷 Bibliogram</td>
           <td>Alternative front-end for Instagram (Active forks required)</td>
           <td>Web</td>
-          <td><a href="https://github.com/bebo-dot-dev/Bibliogram" target="_blank">GitHub</a></td>
+          <td><a href="https://github.com/bebo-dot-dev/Bibliogram" target="_blank" rel="noopener">GitHub</a></td>
         </tr>
         <tr>
-          <td>ProxiTok</td>
+          <td>🎵 ProxiTok</td>
           <td>Open source alternative frontend for TikTok</td>
           <td>Web</td>
-          <td><a href="https://github.com/pablouser1/ProxiTok" target="_blank">GitHub</a></td>
+          <td><a href="https://github.com/pablouser1/ProxiTok" target="_blank" rel="noopener">GitHub</a></td>
         </tr>
         <tr>
-          <td>Quetre</td>
+          <td>❓ Quetre</td>
           <td>Libre frontend for Quora</td>
           <td>Web</td>
-          <td><a href="https://github.com/zyachel/quetre" target="_blank">GitHub</a></td>
+          <td><a href="https://github.com/zyachel/quetre" target="_blank" rel="noopener">GitHub</a></td>
         </tr>
         <tr>
-          <td>Wikiless</td>
+          <td>📖 Wikiless</td>
           <td>A free open source alternative Wikipedia front-end focused on privacy</td>
           <td>Web</td>
-          <td><a href="https://github.com/Nangjing/wikiless" target="_blank">GitHub</a></td>
+          <td><a href="https://github.com/Nangjing/wikiless" target="_blank" rel="noopener">GitHub</a></td>
         </tr>
         <tr>
-          <td>Nitter</td>
+          <td>🐦 Nitter</td>
           <td>Alternative Twitter frontend (Discontinued but codebase relevant for archival)</td>
           <td>Web</td>
-          <td><a href="https://github.com/zedeus/nitter" target="_blank">GitHub</a></td>
+          <td><a href="https://github.com/zedeus/nitter" target="_blank" rel="noopener">GitHub</a></td>
         </tr>
       </tbody>
     </table>
@@ -324,7 +265,7 @@ title: Resources
     <p>Want to contribute? Here's how to add your resource:</p>
     <ol>
       <li>Choose the appropriate category above</li>
-      <li>Add your resource following the table format</li>
+      <li>Add your resource with install links and platform tags</li>
       <li>Include all required information</li>
       <li>Ensure links are valid and current</li>
       <li>Submit a pull request with your addition</li>

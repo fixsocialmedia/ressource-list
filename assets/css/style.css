@@ -821,3 +821,192 @@ img {
     color: var(--color-primary);
     padding-left: 0.5rem;
 }
+
+/* ====================================
+   Platform Filter
+   ==================================== */
+.filter-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.platform-filter-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.platform-filter-wrap label {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.platform-select {
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    font-size: 0.875rem;
+    font-family: var(--font-family);
+    background-color: var(--color-bg);
+    cursor: pointer;
+    color: var(--color-text);
+}
+
+.platform-select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* ====================================
+   Resource Cards (Browser Extensions)
+   ==================================== */
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.resource-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    padding: 1.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.resource-card:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.resource-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 0.625rem;
+}
+
+.resource-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.resource-card h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.resource-description {
+    font-size: 0.825rem;
+    color: var(--color-text-light);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+/* ====================================
+   Install Buttons
+   ==================================== */
+.install-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: auto;
+}
+
+.install-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.65rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    white-space: nowrap;
+    line-height: 1.4;
+}
+
+.install-btn--chrome {
+    background: #4285F4;
+    color: white;
+}
+
+.install-btn--chrome:hover {
+    background: #3374e0;
+    color: white;
+}
+
+.install-btn--firefox {
+    background: #FF7139;
+    color: white;
+}
+
+.install-btn--firefox:hover {
+    background: #e05c2a;
+    color: white;
+}
+
+.install-btn--edge {
+    background: #0078D4;
+    color: white;
+}
+
+.install-btn--edge:hover {
+    background: #006abc;
+    color: white;
+}
+
+.install-btn--safari {
+    background: #1B74E4;
+    color: white;
+}
+
+.install-btn--safari:hover {
+    background: #1660c2;
+    color: white;
+}
+
+.install-btn--github {
+    background: var(--color-bg-light);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}
+
+.install-btn--github:hover {
+    background: var(--color-border);
+    color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .platform-filter-wrap {
+        width: 100%;
+    }
+
+    .platform-select {
+        width: 100%;
+    }
+}

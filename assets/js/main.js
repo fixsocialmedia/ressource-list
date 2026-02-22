@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Search and Filter functionality
     const searchInput = document.getElementById('resource-search');
     const categoryFilter = document.getElementById('category-filter');
+    const platformFilter = document.getElementById('platform-filter');
     const filterChips = document.querySelectorAll('.chip');
     
     if (searchInput) {
@@ -41,6 +42,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (categoryFilter) {
         categoryFilter.addEventListener('change', filterResources);
+    }
+
+    if (platformFilter) {
+        platformFilter.addEventListener('change', filterResources);
     }
     
     filterChips.forEach(chip => {
@@ -54,25 +59,44 @@ document.addEventListener('DOMContentLoaded', function() {
     function filterResources() {
         const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
         const selectedCategories = Array.from(document.querySelectorAll('.chip.active')).map(chip => chip.dataset.category);
+        const selectedPlatform = platformFilter ? platformFilter.value : '';
         
         const resourceCategories = document.querySelectorAll('.resource-category');
         
         resourceCategories.forEach(category => {
             const categoryName = category.dataset.category;
-            const tables = category.querySelectorAll('.resource-table tbody tr');
-            let visibleRows = 0;
-            
-            // Check if this category should be visible based on filter chips
             const categoryVisible = selectedCategories.length === 0 || selectedCategories.includes(categoryName);
             
             if (!categoryVisible) {
                 category.style.display = 'none';
                 return;
             }
-            
-            tables.forEach(row => {
+
+            // Handle card-based resources (e.g. browser extensions)
+            const cards = category.querySelectorAll('.resource-card');
+            let visibleCards = 0;
+
+            cards.forEach(card => {
+                const platforms = card.dataset.platforms || '';
+                const cardText = ((card.dataset.name || '') + ' ' + (card.dataset.description || '')).toLowerCase();
+                const matchesSearch = !searchTerm || cardText.includes(searchTerm);
+                const matchesPlatform = !selectedPlatform || platforms.includes(selectedPlatform);
+
+                if (matchesSearch && matchesPlatform) {
+                    card.style.display = '';
+                    visibleCards++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Handle table-based resources
+            const rows = category.querySelectorAll('.resource-table tbody tr');
+            let visibleRows = 0;
+
+            rows.forEach(row => {
                 const text = row.textContent.toLowerCase();
-                const matchesSearch = text.includes(searchTerm);
+                const matchesSearch = !searchTerm || text.includes(searchTerm);
                 
                 if (matchesSearch) {
                     row.style.display = '';
@@ -82,8 +106,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
             
-            // Hide category if no rows are visible
-            category.style.display = visibleRows > 0 ? '' : 'none';
+            // Hide category if no items are visible
+            category.style.display = (visibleCards > 0 || visibleRows > 0 || (cards.length === 0 && rows.length === 0)) ? '' : 'none';
         });
     }
     
