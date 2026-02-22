@@ -1,0 +1,1030 @@
+---
+layout: default
+title: Installation Wizard
+---
+
+<div class="page-header">
+  <div class="container">
+    <h1>🧙 Installation Wizard</h1>
+    <p>Get the right tools installed in minutes — step by step</p>
+  </div>
+</div>
+
+<div class="container doc-content">
+  <div id="wizard-container">
+
+    <!-- Step 1: Welcome -->
+    <div id="wizard-step-1" class="wizard-step active">
+      <div class="wizard-welcome">
+        <div class="wizard-icon">🚀</div>
+        <h2>Welcome to the Installation Wizard</h2>
+        <p>This wizard will help you install the best tools to improve your social media experience. In just a few steps you'll have everything set up.</p>
+        <ul class="wizard-benefits">
+          <li>✅ Personalized tool recommendations</li>
+          <li>✅ One-click install buttons for your browser</li>
+          <li>✅ Step-by-step installation guidance</li>
+          <li>✅ Share this wizard link to your phone</li>
+        </ul>
+        <p class="privacy-note"><strong>🔒 Privacy:</strong> Everything runs locally in your browser. No data is collected or sent anywhere.</p>
+        <button class="btn btn-primary btn-large" onclick="wizardNext(1)">Get Started →</button>
+      </div>
+    </div>
+
+    <!-- Step 2: Choose Goal -->
+    <div id="wizard-step-2" class="wizard-step">
+      <div class="wizard-progress-wrap">
+        <div class="wizard-progress-bar"><div class="wizard-progress-fill" style="width:25%"></div></div>
+        <span class="wizard-step-label">Step 1 of 4</span>
+      </div>
+      <h2>What would you like to improve?</h2>
+      <p>Pick your main goal. You can always run the wizard again for other goals.</p>
+      <div class="wizard-goal-grid">
+        <button class="wizard-goal-card" data-goal="youtube" onclick="selectGoal(this)">
+          <span class="goal-icon">📺</span>
+          <strong>Clean up YouTube</strong>
+          <span>Remove recommendations, clickbait thumbnails &amp; sponsor segments</span>
+        </button>
+        <button class="wizard-goal-card" data-goal="twitter" onclick="selectGoal(this)">
+          <span class="goal-icon">🐦</span>
+          <strong>Improve Twitter / X</strong>
+          <span>Restore chronological timeline &amp; clean up the interface</span>
+        </button>
+        <button class="wizard-goal-card" data-goal="reddit" onclick="selectGoal(this)">
+          <span class="goal-icon">🤖</span>
+          <strong>Better Reddit</strong>
+          <span>Hide distracting feeds and sidebars on Reddit</span>
+        </button>
+        <button class="wizard-goal-card" data-goal="feeds" onclick="selectGoal(this)">
+          <span class="goal-icon">📰</span>
+          <strong>Block All News Feeds</strong>
+          <span>Replace infinite-scroll feeds on Facebook, LinkedIn &amp; others with inspiring quotes</span>
+        </button>
+        <button class="wizard-goal-card" data-goal="privacy" onclick="selectGoal(this)">
+          <span class="goal-icon">🛡️</span>
+          <strong>Protect My Privacy</strong>
+          <span>Automatically redirect to privacy-friendly alternatives for YouTube, Reddit &amp; more</span>
+        </button>
+        <button class="wizard-goal-card" data-goal="sponsors" onclick="selectGoal(this)">
+          <span class="goal-icon">⏭️</span>
+          <strong>Skip Sponsor Segments</strong>
+          <span>Crowdsource-skipped sponsor, intro and outro segments on YouTube</span>
+        </button>
+      </div>
+      <div class="wizard-nav">
+        <button class="btn btn-secondary" onclick="wizardBack(2)">← Back</button>
+        <button class="btn btn-primary" id="goal-next-btn" onclick="wizardNext(2)" disabled>Next →</button>
+      </div>
+    </div>
+
+    <!-- Step 3: Choose Browser -->
+    <div id="wizard-step-3" class="wizard-step">
+      <div class="wizard-progress-wrap">
+        <div class="wizard-progress-bar"><div class="wizard-progress-fill" style="width:50%"></div></div>
+        <span class="wizard-step-label">Step 2 of 4</span>
+      </div>
+      <h2>Which browser do you use?</h2>
+      <p>We'll show you the right install button for your browser.</p>
+      <div class="wizard-browser-grid">
+        <button class="wizard-browser-card" data-browser="chrome" onclick="selectBrowser(this)">
+          <svg class="browser-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="50" cy="50" r="45" fill="#fff" stroke="#e0e0e0" stroke-width="2"/>
+            <circle cx="50" cy="50" r="20" fill="#4285F4"/>
+            <path d="M50 30 a20 20 0 0 1 17.3 10 H50z" fill="#EA4335"/>
+            <path d="M67.3 40 a20 20 0 0 1 0 20 L50 50z" fill="#FBBC05"/>
+            <path d="M67.3 60 a20 20 0 0 1 -34.6 0 L50 50z" fill="#34A853"/>
+            <path d="M32.7 60 a20 20 0 0 1 0 -20 L50 50z" fill="#EA4335"/>
+            <path d="M50 30 H67.3 a20 20 0 0 0 -17.3 -10z" fill="#EA4335"/>
+            <!-- Ring -->
+            <circle cx="50" cy="50" r="28" fill="none" stroke="#e0e0e0" stroke-width="16" opacity="0.15"/>
+          </svg>
+          <strong>Chrome</strong>
+          <span>Google Chrome / Chromium</span>
+        </button>
+        <button class="wizard-browser-card" data-browser="firefox" onclick="selectBrowser(this)">
+          <svg class="browser-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="50" cy="50" r="45" fill="#FF6D00"/>
+            <circle cx="50" cy="50" r="30" fill="#FFD600"/>
+            <circle cx="50" cy="50" r="18" fill="#FF6D00"/>
+            <circle cx="50" cy="50" r="10" fill="#1565C0"/>
+            <text x="50" y="57" text-anchor="middle" font-size="24" fill="white">🦊</text>
+          </svg>
+          <strong>Firefox</strong>
+          <span>Mozilla Firefox</span>
+        </button>
+        <button class="wizard-browser-card" data-browser="edge" onclick="selectBrowser(this)">
+          <svg class="browser-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="50" cy="50" r="45" fill="#0078D7"/>
+            <text x="50" y="65" text-anchor="middle" font-size="52" fill="white">e</text>
+          </svg>
+          <strong>Edge</strong>
+          <span>Microsoft Edge</span>
+        </button>
+        <button class="wizard-browser-card" data-browser="brave" onclick="selectBrowser(this)">
+          <svg class="browser-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="50" cy="50" r="45" fill="#FB542B"/>
+            <text x="50" y="65" text-anchor="middle" font-size="44" fill="white">🦁</text>
+          </svg>
+          <strong>Brave</strong>
+          <span>Brave Browser</span>
+        </button>
+        <button class="wizard-browser-card" data-browser="safari" onclick="selectBrowser(this)">
+          <svg class="browser-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="50" cy="50" r="45" fill="#1C9AE1"/>
+            <circle cx="50" cy="50" r="30" fill="white"/>
+            <line x1="50" y1="20" x2="50" y2="80" stroke="#e0e0e0" stroke-width="2"/>
+            <line x1="20" y1="50" x2="80" y2="50" stroke="#e0e0e0" stroke-width="2"/>
+            <polygon points="50,30 55,50 50,46 45,50" fill="#E34B35"/>
+            <polygon points="50,70 45,50 50,54 55,50" fill="#888"/>
+          </svg>
+          <strong>Safari</strong>
+          <span>Apple Safari</span>
+        </button>
+      </div>
+      <div class="wizard-nav">
+        <button class="btn btn-secondary" onclick="wizardBack(3)">← Back</button>
+        <button class="btn btn-primary" id="browser-next-btn" onclick="wizardNext(3)" disabled>Next →</button>
+      </div>
+    </div>
+
+    <!-- Step 4: Recommended Tools -->
+    <div id="wizard-step-4" class="wizard-step">
+      <div class="wizard-progress-wrap">
+        <div class="wizard-progress-bar"><div class="wizard-progress-fill" style="width:75%"></div></div>
+        <span class="wizard-step-label">Step 3 of 4</span>
+      </div>
+      <h2>Recommended Tools</h2>
+      <p id="tools-intro">Here are the best tools for your goal. Click an install button to add one to your browser.</p>
+      <div id="tool-cards-container">
+        <!-- Dynamically populated -->
+      </div>
+      <div class="wizard-nav">
+        <button class="btn btn-secondary" onclick="wizardBack(4)">← Back</button>
+        <button class="btn btn-primary" onclick="wizardNext(4)">I'm done installing →</button>
+      </div>
+    </div>
+
+    <!-- Step 5: Done & Share -->
+    <div id="wizard-step-5" class="wizard-step">
+      <div class="wizard-progress-wrap">
+        <div class="wizard-progress-bar"><div class="wizard-progress-fill" style="width:100%"></div></div>
+        <span class="wizard-step-label">Step 4 of 4 — Done! 🎉</span>
+      </div>
+      <div class="wizard-done">
+        <div class="wizard-icon">🎉</div>
+        <h2>You're all set!</h2>
+        <p>Your tools have been installed. Enjoy a cleaner, healthier social media experience.</p>
+
+        <div class="share-section">
+          <h3>📱 Send this wizard to your phone</h3>
+          <p>Want to set up your mobile browser too? Share this page link:</p>
+          <div class="share-buttons">
+            <a id="share-email" href="#" class="share-btn share-email" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              Email me a link
+            </a>
+            <a id="share-whatsapp" href="#" class="share-btn share-whatsapp" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp
+            </a>
+            <a id="share-telegram" href="#" class="share-btn share-telegram" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              Telegram
+            </a>
+            <button id="share-signal" class="share-btn share-signal" onclick="copyWizardLink()">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 4a8 8 0 1 1 0 16A8 8 0 0 1 12 4zm0 3a1 1 0 0 0-1 1v5a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 13.586V8a1 1 0 0 0-1-1z"/></svg>
+              <span id="signal-btn-text">Copy link for Signal</span>
+            </button>
+          </div>
+          <p class="share-url-display" id="share-url-display"></p>
+        </div>
+
+        <div class="wizard-final-actions">
+          <button class="btn btn-secondary" onclick="restartWizard()">🔄 Run Wizard Again</button>
+          <a href="{{ '/resources' | relative_url }}" class="btn btn-outline">📚 Browse All Resources</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // Site base URL for sharing
+  var WIZARD_URL = (function () {
+    var base = '{{ site.url }}{{ site.baseurl }}';
+    return base + '/wizard';
+  }());
+
+  // Tool database
+  var TOOLS = {
+    youtube: [
+      {
+        id: 'unhook',
+        name: 'Unhook',
+        description: 'Removes YouTube recommendations, suggested videos, comments, trending, and other distracting elements so you stay focused.',
+        icon: '🔕',
+        stores: {
+          chrome: { label: 'Add to Chrome', url: 'https://chrome.google.com/webstore/detail/unhook-remove-youtube-rec/khncfooichmfjbepaaaebmommgaepoid' },
+          firefox: { label: 'Add to Firefox', url: 'https://addons.mozilla.org/en-US/firefox/addon/unhook-for-youtube/' },
+          edge: { label: 'Add to Edge', url: 'https://chrome.google.com/webstore/detail/unhook-remove-youtube-rec/khncfooichmfjbepaaaebmommgaepoid' },
+          brave: { label: 'Add to Brave', url: 'https://chrome.google.com/webstore/detail/unhook-remove-youtube-rec/khncfooichmfjbepaaaebmommgaepoid' },
+          safari: { label: 'Get on App Store', url: 'https://github.com/kxia5/Unhook' }
+        },
+        steps: [
+          'Click the install button above to open the browser extension store.',
+          'Click "Add to Chrome" (or "Add to Firefox") on the store page.',
+          'Confirm any permission dialogs that appear.',
+          'Open YouTube — you will now see a cleaner interface without recommended videos.',
+          'Click the Unhook icon in your toolbar to customise which elements to hide.'
+        ]
+      },
+      {
+        id: 'dearrow',
+        name: 'DeArrow',
+        description: 'Replaces sensationalist YouTube titles and thumbnails with community-sourced, neutral alternatives so you can judge content fairly.',
+        icon: '🏷️',
+        stores: {
+          chrome: { label: 'Add to Chrome', url: 'https://chrome.google.com/webstore/detail/dearrow-better-titles-and/enamippconapkdmgfgjchkhakpfinmaj' },
+          firefox: { label: 'Add to Firefox', url: 'https://addons.mozilla.org/en-US/firefox/addon/dearrow/' },
+          edge: { label: 'Add to Edge', url: 'https://chrome.google.com/webstore/detail/dearrow-better-titles-and/enamippconapkdmgfgjchkhakpfinmaj' },
+          brave: { label: 'Add to Brave', url: 'https://chrome.google.com/webstore/detail/dearrow-better-titles-and/enamippconapkdmgfgjchkhakpfinmaj' },
+          safari: { label: 'GitHub', url: 'https://github.com/ajayyy/DeArrow' }
+        },
+        steps: [
+          'Click the install button above to open the extension store.',
+          'Click "Add to Chrome" (or "Add to Firefox") and confirm.',
+          'Open YouTube and notice that clickbait titles are replaced with community alternatives.',
+          'Thumbnails are replaced by a still frame from the video.',
+          'You can vote on title alternatives or submit your own by clicking the extension icon.'
+        ]
+      }
+    ],
+    sponsors: [
+      {
+        id: 'sponsorblock',
+        name: 'SponsorBlock',
+        description: 'Automatically skips sponsor segments, intros, outros, and self-promotions in YouTube videos using crowdsourced timestamps.',
+        icon: '⏭️',
+        stores: {
+          chrome: { label: 'Add to Chrome', url: 'https://chrome.google.com/webstore/detail/sponsorblock-for-youtube/mnjggcdmjocbbbhaepdhchncahnbgone' },
+          firefox: { label: 'Add to Firefox', url: 'https://addons.mozilla.org/en-US/firefox/addon/sponsorblock/' },
+          edge: { label: 'Add to Edge', url: 'https://chrome.google.com/webstore/detail/sponsorblock-for-youtube/mnjggcdmjocbbbhaepdhchncahnbgone' },
+          brave: { label: 'Add to Brave', url: 'https://chrome.google.com/webstore/detail/sponsorblock-for-youtube/mnjggcdmjocbbbhaepdhchncahnbgone' },
+          safari: { label: 'Get on App Store', url: 'https://apps.apple.com/app/sponsorblock-for-youtube/id1573461973' }
+        },
+        steps: [
+          'Click the install button above to open the browser extension store.',
+          'Click "Add to Chrome" (or "Add to Firefox") and accept permissions.',
+          'Open a YouTube video. A coloured progress-bar segment will appear for sponsor sections.',
+          'SponsorBlock will automatically skip to the end of the segment.',
+          'You can adjust which segment types to skip in the extension settings.'
+        ]
+      }
+    ],
+    twitter: [
+      {
+        id: 'control-panel-twitter',
+        name: 'Control Panel for Twitter',
+        description: 'Fixes the Twitter/X UI: restore chronological timeline, hide algorithmic cruft, mute keywords, and many other tweaks.',
+        icon: '🐦',
+        stores: {
+          chrome: { label: 'Add to Chrome', url: 'https://chrome.google.com/webstore/detail/control-panel-for-twitter/kpmjjdhbcfebfjgdnpjagcndoelnidfj' },
+          firefox: { label: 'Add to Firefox', url: 'https://addons.mozilla.org/en-US/firefox/addon/control-panel-for-twitter/' },
+          edge: { label: 'Add to Edge', url: 'https://chrome.google.com/webstore/detail/control-panel-for-twitter/kpmjjdhbcfebfjgdnpjagcndoelnidfj' },
+          brave: { label: 'Add to Brave', url: 'https://chrome.google.com/webstore/detail/control-panel-for-twitter/kpmjjdhbcfebfjgdnpjagcndoelnidfj' },
+          safari: { label: 'GitHub', url: 'https://github.com/insin/control-panel-for-twitter' }
+        },
+        steps: [
+          'Click the install button above to open the extension store.',
+          'Click "Add to Chrome" (or "Add to Firefox") and confirm any permissions.',
+          "Open Twitter/X (x.com). You'll notice the interface is already cleaner.",
+          'Click the Control Panel icon in your toolbar to open settings.',
+          'Enable "Chronological timeline" to see tweets in order, not by algorithm.',
+          'Explore other settings to hide Trending, Who to Follow, ads, and more.'
+        ]
+      }
+    ],
+    reddit: [
+      {
+        id: 'unhook-reddit',
+        name: 'Unhook for Reddit',
+        description: 'Hides distracting elements on Reddit — recommended posts, sidebars, trending, promoted posts — so you can focus on what you came for.',
+        icon: '🤖',
+        stores: {
+          chrome: { label: 'Add to Chrome', url: 'https://github.com/mrandal/unhook-for-reddit' },
+          firefox: { label: 'Add to Firefox', url: 'https://github.com/mrandal/unhook-for-reddit' },
+          edge: { label: 'GitHub', url: 'https://github.com/mrandal/unhook-for-reddit' },
+          brave: { label: 'GitHub', url: 'https://github.com/mrandal/unhook-for-reddit' },
+          safari: { label: 'GitHub', url: 'https://github.com/mrandal/unhook-for-reddit' }
+        },
+        steps: [
+          'Click the link above to visit the GitHub page for Unhook for Reddit.',
+          'Follow the manual installation instructions in the README.',
+          'For Chrome/Edge: enable Developer Mode in chrome://extensions, then load the unpacked extension.',
+          'For Firefox: use "Load Temporary Add-on" from about:debugging.',
+          'Reload Reddit and enjoy a cleaner interface without recommended posts.'
+        ]
+      },
+      {
+        id: 'redlib',
+        name: 'Redlib (Privacy Frontend)',
+        description: 'Use Reddit through a lightweight, ad-free, tracking-free alternative frontend. No account needed.',
+        icon: '🔴',
+        stores: {
+          chrome: { label: 'Open Redlib', url: 'https://redlib.catsarch.com' },
+          firefox: { label: 'Open Redlib', url: 'https://redlib.catsarch.com' },
+          edge: { label: 'Open Redlib', url: 'https://redlib.catsarch.com' },
+          brave: { label: 'Open Redlib', url: 'https://redlib.catsarch.com' },
+          safari: { label: 'Open Redlib', url: 'https://redlib.catsarch.com' }
+        },
+        steps: [
+          'Click "Open Redlib" above to visit a public Redlib instance.',
+          'Browse Reddit content without tracking, ads, or an account.',
+          'Bookmark the Redlib address as your default Reddit link.',
+          'Optionally install LibRedirect (see Privacy goal) to auto-redirect reddit.com to Redlib.'
+        ]
+      }
+    ],
+    feeds: [
+      {
+        id: 'news-feed-eradicator',
+        name: 'News Feed Eradicator',
+        description: 'Replaces the news feed on Facebook, Twitter, LinkedIn, YouTube, and other sites with an inspirational quote — eliminating the infinite scroll.',
+        icon: '📰',
+        stores: {
+          chrome: { label: 'Add to Chrome', url: 'https://chrome.google.com/webstore/detail/news-feed-eradicator/fjcldmjmjhkklehbacihaiopjklihlgg' },
+          firefox: { label: 'Add to Firefox', url: 'https://addons.mozilla.org/en-US/firefox/addon/news-feed-eradicator/' },
+          edge: { label: 'Add to Edge', url: 'https://chrome.google.com/webstore/detail/news-feed-eradicator/fjcldmjmjhkklehbacihaiopjklihlgg' },
+          brave: { label: 'Add to Brave', url: 'https://chrome.google.com/webstore/detail/news-feed-eradicator/fjcldmjmjhkklehbacihaiopjklihlgg' },
+          safari: { label: 'GitHub', url: 'https://github.com/jordwest/news-feed-eradicator' }
+        },
+        steps: [
+          'Click the install button above to open the extension store.',
+          'Click "Add to Chrome" (or "Add to Firefox") and confirm.',
+          'Open Facebook (or another supported site). The news feed is now replaced with a quote.',
+          'You can still navigate to specific profiles, groups, or pages — just not the addictive feed.',
+          'Click the extension icon to customise which sites are affected.'
+        ]
+      }
+    ],
+    privacy: [
+      {
+        id: 'libredirect',
+        name: 'LibRedirect',
+        description: 'Automatically redirects YouTube, Twitter, Reddit, Instagram, and more to privacy-friendly alternative frontends (Invidious, Nitter, Redlib, etc.).',
+        icon: '🛡️',
+        stores: {
+          chrome: { label: 'Add to Chrome', url: 'https://chrome.google.com/webstore/detail/libredirect/iahimdfoldnaaabnkpejhgidbeifnlgd' },
+          firefox: { label: 'Add to Firefox', url: 'https://addons.mozilla.org/en-US/firefox/addon/libredirect/' },
+          edge: { label: 'Add to Edge', url: 'https://chrome.google.com/webstore/detail/libredirect/iahimdfoldnaaabnkpejhgidbeifnlgd' },
+          brave: { label: 'Add to Brave', url: 'https://chrome.google.com/webstore/detail/libredirect/iahimdfoldnaaabnkpejhgidbeifnlgd' },
+          safari: { label: 'GitHub', url: 'https://github.com/libredirect/libredirect' }
+        },
+        steps: [
+          'Click the install button above to open the extension store.',
+          'Click "Add to Chrome" (or "Add to Firefox") and confirm permissions.',
+          'Open the LibRedirect settings (click the extension icon → Settings).',
+          'Enable the services you want to redirect (YouTube → Invidious, Reddit → Redlib, etc.).',
+          "Now any time you click a YouTube or Reddit link, you'll be taken to the privacy-friendly frontend automatically."
+        ]
+      }
+    ]
+  };
+
+  var wizardState = {
+    goal: null,
+    browser: null,
+    selectedTool: null
+  };
+
+  // Expose functions globally for onclick handlers
+  window.selectGoal = function (el) {
+    document.querySelectorAll('.wizard-goal-card').forEach(function (c) { c.classList.remove('selected'); });
+    el.classList.add('selected');
+    wizardState.goal = el.dataset.goal;
+    document.getElementById('goal-next-btn').disabled = false;
+  };
+
+  window.selectBrowser = function (el) {
+    document.querySelectorAll('.wizard-browser-card').forEach(function (c) { c.classList.remove('selected'); });
+    el.classList.add('selected');
+    wizardState.browser = el.dataset.browser;
+    document.getElementById('browser-next-btn').disabled = false;
+  };
+
+  window.wizardNext = function (currentStep) {
+    goToStep(currentStep + 1);
+    if (currentStep + 1 === 4) {
+      renderTools();
+    }
+    if (currentStep + 1 === 5) {
+      renderShareLinks();
+    }
+  };
+
+  window.wizardBack = function (currentStep) {
+    goToStep(currentStep - 1);
+  };
+
+  window.restartWizard = function () {
+    wizardState = { goal: null, browser: null, selectedTool: null };
+    document.querySelectorAll('.wizard-goal-card').forEach(function (c) { c.classList.remove('selected'); });
+    document.querySelectorAll('.wizard-browser-card').forEach(function (c) { c.classList.remove('selected'); });
+    document.getElementById('goal-next-btn').disabled = true;
+    document.getElementById('browser-next-btn').disabled = true;
+    goToStep(1);
+  };
+
+  window.copyWizardLink = function () {
+    var btn = document.getElementById('signal-btn-text');
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(WIZARD_URL).then(function () {
+        btn.textContent = '✅ Copied!';
+        setTimeout(function () { btn.textContent = 'Copy link for Signal'; }, 2500);
+      });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = WIZARD_URL;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand('copy'); } catch (err) { ok = false; }
+      document.body.removeChild(ta);
+      if (ok) {
+        btn.textContent = '✅ Copied!';
+        setTimeout(function () { btn.textContent = 'Copy link for Signal'; }, 2500);
+      } else {
+        btn.textContent = WIZARD_URL;
+        setTimeout(function () { btn.textContent = 'Copy link for Signal'; }, 4000);
+      }
+    }
+  };
+
+  function goToStep(n) {
+    document.querySelectorAll('.wizard-step').forEach(function (s) { s.classList.remove('active'); });
+    var step = document.getElementById('wizard-step-' + n);
+    if (step) {
+      step.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  function getBrowserLabel(browser) {
+    var labels = { chrome: 'Chrome', firefox: 'Firefox', edge: 'Edge', brave: 'Brave', safari: 'Safari' };
+    return labels[browser] || browser;
+  }
+
+  function renderTools() {
+    var goal = wizardState.goal;
+    var browser = wizardState.browser;
+    var tools = TOOLS[goal] || [];
+    var container = document.getElementById('tool-cards-container');
+
+    if (tools.length === 0) {
+      container.innerHTML = '<p>No tools found for this goal. <a href="{{ "/resources" | relative_url }}">Browse all resources →</a></p>';
+      return;
+    }
+
+    var html = '';
+    tools.forEach(function (tool, idx) {
+      var store = tool.stores[browser] || tool.stores['chrome'];
+      var stepsHtml = tool.steps.map(function (s, i) {
+        return '<li><span class="step-number">' + (i + 1) + '</span>' + escapeHtml(s) + '</li>';
+      }).join('');
+
+      html += '<div class="tool-card">' +
+        '<div class="tool-card-header">' +
+          '<span class="tool-icon" aria-hidden="true">' + tool.icon + '</span>' +
+          '<div class="tool-info">' +
+            '<h3>' + escapeHtml(tool.name) + '</h3>' +
+            '<p>' + escapeHtml(tool.description) + '</p>' +
+          '</div>' +
+        '</div>' +
+        '<a href="' + store.url + '" class="btn btn-install" target="_blank" rel="noopener">' +
+          getBrowserBadge(browser) +
+          escapeHtml(store.label) +
+        '</a>' +
+        '<details class="tool-steps">' +
+          '<summary>📋 Step-by-step installation guide</summary>' +
+          '<ol class="install-steps">' + stepsHtml + '</ol>' +
+        '</details>' +
+      '</div>';
+    });
+
+    container.innerHTML = html;
+  }
+
+  function renderShareLinks() {
+    var msg = encodeURIComponent('Check out this step-by-step tool installation wizard to improve your social media experience: ' + WIZARD_URL);
+    var url = encodeURIComponent(WIZARD_URL);
+
+    document.getElementById('share-email').href =
+      'mailto:?subject=' + encodeURIComponent('Fix Social Media – Installation Wizard') +
+      '&body=' + msg;
+    document.getElementById('share-whatsapp').href = 'https://wa.me/?text=' + msg;
+    document.getElementById('share-telegram').href = 'https://t.me/share/url?url=' + url + '&text=' + encodeURIComponent('Fix Social Media – Installation Wizard');
+    document.getElementById('share-url-display').textContent = WIZARD_URL;
+  }
+
+  function getBrowserBadge(browser) {
+    var colors = { chrome: '#4285F4', firefox: '#FF6D00', edge: '#0078D7', brave: '#FB542B', safari: '#1C9AE1' };
+    var color = colors[browser] || '#3b82f6';
+    return '<span class="browser-badge" style="background:' + color + '">' + getBrowserLabel(browser) + '</span>';
+  }
+
+  function escapeHtml(str) {
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+}());
+</script>
+
+<style>
+/* ====================================
+   Wizard Layout
+   ==================================== */
+.wizard-step {
+  display: none;
+  animation: wizardFadeIn 0.3s ease;
+}
+
+.wizard-step.active {
+  display: block;
+}
+
+@keyframes wizardFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ====================================
+   Welcome Screen
+   ==================================== */
+.wizard-welcome {
+  text-align: center;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.wizard-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.wizard-welcome h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.wizard-welcome p {
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  margin-bottom: 1.5rem;
+}
+
+.wizard-benefits {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+.wizard-benefits li {
+  padding: 0.4rem 0;
+  font-size: 1rem;
+}
+
+.privacy-note {
+  font-size: 0.9rem;
+  background: #e8f5e9;
+  border-left: 4px solid #4CAF50;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+/* ====================================
+   Progress Bar
+   ==================================== */
+.wizard-progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.wizard-progress-bar {
+  flex: 1;
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.wizard-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+.wizard-step-label {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  white-space: nowrap;
+}
+
+/* ====================================
+   Goal Cards
+   ==================================== */
+.wizard-goal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.wizard-goal-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  padding: 1.25rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background: var(--color-bg);
+  cursor: pointer;
+  text-align: left;
+  transition: var(--transition);
+  font-family: var(--font-family);
+}
+
+.wizard-goal-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(59,130,246,0.15);
+  transform: translateY(-2px);
+}
+
+.wizard-goal-card.selected {
+  border-color: var(--color-primary);
+  background: #eff6ff;
+  box-shadow: 0 4px 12px rgba(59,130,246,0.2);
+}
+
+.goal-icon {
+  font-size: 2rem;
+}
+
+.wizard-goal-card strong {
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.wizard-goal-card span {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  line-height: 1.4;
+}
+
+/* ====================================
+   Browser Cards
+   ==================================== */
+.wizard-browser-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.wizard-browser-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.25rem 1.5rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background: var(--color-bg);
+  cursor: pointer;
+  min-width: 120px;
+  transition: var(--transition);
+  font-family: var(--font-family);
+}
+
+.wizard-browser-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(59,130,246,0.15);
+  transform: translateY(-2px);
+}
+
+.wizard-browser-card.selected {
+  border-color: var(--color-primary);
+  background: #eff6ff;
+}
+
+.browser-logo {
+  width: 56px;
+  height: 56px;
+}
+
+.wizard-browser-card strong {
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.wizard-browser-card span {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  text-align: center;
+}
+
+/* ====================================
+   Tool Cards
+   ==================================== */
+.tool-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background: var(--color-bg);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.tool-card-header {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.tool-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.tool-info h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.2rem;
+  color: var(--color-text);
+}
+
+.tool-info p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.5;
+}
+
+.btn-install {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-primary);
+  color: white;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  margin-bottom: 1rem;
+  text-decoration: none;
+}
+
+.btn-install:hover {
+  background: var(--color-primary-dark);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(59,130,246,0.3);
+}
+
+.browser-badge {
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ====================================
+   Installation Steps (details/summary)
+   ==================================== */
+.tool-steps {
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.75rem;
+}
+
+.tool-steps summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  user-select: none;
+  list-style: none;
+  padding: 0.25rem 0;
+}
+
+.tool-steps summary::-webkit-details-marker { display: none; }
+.tool-steps[open] summary { margin-bottom: 1rem; }
+
+.install-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: step;
+}
+
+.install-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--color-border);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.install-steps li:last-child {
+  border-bottom: none;
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  background: var(--color-primary);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ====================================
+   Done & Share Screen
+   ==================================== */
+.wizard-done {
+  text-align: center;
+  max-width: 640px;
+  margin: 2rem auto;
+}
+
+.wizard-done h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.wizard-done > p {
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  margin-bottom: 2rem;
+}
+
+.share-section {
+  background: var(--color-bg-light);
+  border-radius: var(--border-radius);
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.share-section h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.share-section > p {
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+
+.share-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.1rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-family);
+}
+
+.share-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.share-email {
+  background: #6b7280;
+  color: white;
+}
+.share-email:hover { background: #4b5563; color: white; }
+
+.share-whatsapp {
+  background: #25D366;
+  color: white;
+}
+.share-whatsapp:hover { background: #1ebe59; color: white; }
+
+.share-telegram {
+  background: #2CA5E0;
+  color: white;
+}
+.share-telegram:hover { background: #1a8fc7; color: white; }
+
+.share-signal {
+  background: #3A76F0;
+  color: white;
+}
+.share-signal:hover { background: #2b65de; color: white; }
+
+.share-url-display {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  word-break: break-all;
+  margin: 0;
+}
+
+.wizard-final-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ====================================
+   Nav Buttons
+   ==================================== */
+.wizard-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+/* ====================================
+   Responsive
+   ==================================== */
+@media (max-width: 600px) {
+  .wizard-goal-grid {
+    grid-template-columns: 1fr;
+  }
+  .wizard-browser-grid {
+    justify-content: center;
+  }
+  .wizard-nav {
+    flex-direction: column-reverse;
+  }
+  .wizard-nav .btn {
+    width: 100%;
+    text-align: center;
+  }
+  .share-buttons {
+    flex-direction: column;
+  }
+  .share-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .wizard-final-actions {
+    flex-direction: column;
+  }
+  .wizard-final-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+  .tool-card-header {
+    flex-direction: column;
+  }
+}
+</style>
