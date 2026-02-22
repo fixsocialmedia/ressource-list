@@ -1,5 +1,5 @@
 # Site settings
-title: "Fix Social Media - Resource List"
+title: "Fix Social Media"
 description: "A curated collection of tools and resources to improve social media quality and combat AI-generated content"
 baseurl: "/ressource-list"
 url: "https://fixsocialmedia.github.io"
@@ -26,19 +26,26 @@ exclude:
 # Navigation
 navigation:
   - title: Home
+    key: home
     url: /
   - title: Resources
+    key: resources
     url: /resources
+  - title: Ad Blocking
+    key: ad_blocking
+    url: /ad-blocking
+  - title: Digital Well-being
+    key: digital_wellbeing
+    url: /digital-wellbeing
   - title: Framework
+    key: framework
     url: /framework
   - title: Contributing
+    key: contributing
     url: /contributing
   - title: About
+    key: about
     url: /about
-  - title: Quiz
-    url: /quiz
-  - title: Wizard
-    url: /wizard
 
 # Additional settings
 plugins:

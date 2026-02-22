@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+{% assign lang = page.lang | default: site.lang | default: "en" %}
+{% assign t = site.data.translations[lang] %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +35,7 @@
                     <li class="nav-item">
                         <a href="{{ item.url | relative_url }}" 
                            class="nav-link {% if page.url == item.url %}active{% endif %}">
-                            {{ item.title }}
+                            {% if item.key %}{{ t.nav[item.key] | default: item.title }}{% else %}{{ item.title }}{% endif %}
                         </a>
                     </li>
                     {% endfor %}
