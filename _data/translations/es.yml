@@ -1,6 +1,6 @@
 # Spanish translations
 site:
-  title: "Fix Social Media - Lista de Recursos"
+  title: "Fix Social Media"
   description: "Una colección curada de herramientas y recursos para mejorar la calidad de las redes sociales y combatir el contenido generado por IA"
   
 nav:
@@ -11,6 +11,8 @@ nav:
   contributing: "Contribuir"
   about: "Acerca de"
   github: "GitHub"
+  ad_blocking: "Bloqueo de Anuncios"
+  digital_wellbeing: "Bienestar Digital"
   
 home:
   hero_title: "Arreglar las Redes Sociales"

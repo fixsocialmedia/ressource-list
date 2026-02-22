@@ -1,6 +1,6 @@
 # English translations
 site:
-  title: "Fix Social Media - Resource List"
+  title: "Fix Social Media"
   description: "A curated collection of tools and resources to improve social media quality and combat AI-generated content"
   
 nav:
@@ -11,6 +11,8 @@ nav:
   contributing: "Contributing"
   about: "About"
   github: "GitHub"
+  ad_blocking: "Ad Blocking"
+  digital_wellbeing: "Digital Well-being"
   
 home:
   hero_title: "Fix Social Media"
