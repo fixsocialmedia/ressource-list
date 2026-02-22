@@ -1,0 +1,176 @@
+browser_extensions:
+  - name: "Control Panel for Twitter/X"
+    icon: "🐦"
+    description: "Fix Twitter/X UI, force chronological timeline, and remove algorithmic bloat"
+    github: "https://github.com/insin/control-panel-for-twitter"
+    platforms:
+      - chrome_desktop
+      - firefox_desktop
+      - firefox_android
+    install:
+      - browser: "chrome"
+        label: "Chrome"
+        url: "https://chrome.google.com/webstore/detail/control-panel-for-twitter/kpmjjdhbcfebfjgdnpjagcndoelnidfj"
+      - browser: "firefox"
+        label: "Firefox"
+        url: "https://addons.mozilla.org/en-US/firefox/addon/control-panel-for-twitter/"
+
+  - name: "SponsorBlock"
+    icon: "⏭️"
+    description: "Crowdsourced extension to skip sponsor segments, intros, and subscribes on YouTube"
+    github: "https://github.com/ajayyy/SponsorBlock"
+    platforms:
+      - chrome_desktop
+      - firefox_desktop
+      - edge_desktop
+      - safari
+      - firefox_android
+    install:
+      - browser: "chrome"
+        label: "Chrome"
+        url: "https://chrome.google.com/webstore/detail/sponsorblock-for-youtube-s/mnjggcdmjocbbbhaepdhchncahnbgone"
+      - browser: "firefox"
+        label: "Firefox"
+        url: "https://addons.mozilla.org/en-US/firefox/addon/sponsorblock/"
+      - browser: "edge"
+        label: "Edge"
+        url: "https://microsoftedge.microsoft.com/addons/detail/sponsorblock-for-youtube/neoihcanonoeokbofkgckadomfnabllf"
+      - browser: "safari"
+        label: "Safari"
+        url: "https://apps.apple.com/app/sponsorblock-for-youtube/id1571106018"
+
+  - name: "DeArrow"
+    icon: "🎯"
+    description: "Crowdsourced replacement for sensationalist YouTube titles and thumbnails"
+    github: "https://github.com/ajayyy/DeArrow"
+    platforms:
+      - chrome_desktop
+      - firefox_desktop
+      - edge_desktop
+      - safari
+      - firefox_android
+    install:
+      - browser: "chrome"
+        label: "Chrome"
+        url: "https://chrome.google.com/webstore/detail/dearrow-better-titles-and/enamippconapkdmgfgjchypnlnaasani"
+      - browser: "firefox"
+        label: "Firefox"
+        url: "https://addons.mozilla.org/en-US/firefox/addon/dearrow/"
+      - browser: "edge"
+        label: "Edge"
+        url: "https://microsoftedge.microsoft.com/addons/detail/dearrow-better-titles-an/lbejifeilemfedkmkihinpbmijmdghih"
+      - browser: "safari"
+        label: "Safari"
+        url: "https://apps.apple.com/us/app/dearrow-for-youtube/id6451469297"
+
+  - name: "Improve YouTube!"
+    icon: "📺"
+    description: "Comprehensive extension for tweaking YouTube player, layout, and playback settings"
+    github: "https://github.com/code-charity/youtube"
+    platforms:
+      - chrome_desktop
+      - firefox_desktop
+      - edge_desktop
+    install:
+      - browser: "chrome"
+        label: "Chrome"
+        url: "https://chrome.google.com/webstore/detail/improve-youtube-open-sour/bnomihfieiccainjcjblhegjgglmmplm"
+      - browser: "firefox"
+        label: "Firefox"
+        url: "https://addons.mozilla.org/en-US/firefox/addon/youtube-addon/"
+      - browser: "edge"
+        label: "Edge"
+        url: "https://microsoftedge.microsoft.com/addons/detail/improve-youtube-open-sour/ehkpdebjdmlpdhfmiccjnbgehhpahglk"
+
+  - name: "Unhook"
+    icon: "🎣"
+    description: "Removes YouTube recommended videos, comments, and sidebar to prevent distraction"
+    github: "https://github.com/kxia5/Unhook"
+    platforms:
+      - chrome_desktop
+      - firefox_desktop
+      - firefox_android
+    install:
+      - browser: "chrome"
+        label: "Chrome"
+        url: "https://chrome.google.com/webstore/detail/unhook-remove-youtube-rec/khncfooichmfjbepaaaebmommgaepoid"
+      - browser: "firefox"
+        label: "Firefox"
+        url: "https://addons.mozilla.org/en-US/firefox/addon/youtube-recommended-videos/"
+
+  - name: "Untrapped"
+    icon: "🆓"
+    description: "Hides YouTube suggestions and customizes UI for focus"
+    github: "https://github.com/KishanKokal/Untrapped"
+    platforms:
+      - chrome_desktop
+    install:
+      - browser: "chrome"
+        label: "Chrome"
+        url: "https://chrome.google.com/webstore/detail/untrapped-focus-on-youtub/ogdmllfdkjnkbghpihiibhjkejdhmdmh"
+
+  - name: "News Feed Eradicator"
+    icon: "📵"
+    description: "Replaces news feeds on Facebook, Twitter, LinkedIn and others with an inspirational quote"
+    github: "https://github.com/jordwest/news-feed-eradicator"
+    platforms:
+      - chrome_desktop
+      - firefox_desktop
+      - edge_desktop
+    install:
+      - browser: "chrome"
+        label: "Chrome"
+        url: "https://chrome.google.com/webstore/detail/news-feed-eradicator/fjcldmjmjhkklehbacihaiopjklihlgg"
+      - browser: "firefox"
+        label: "Firefox"
+        url: "https://addons.mozilla.org/en-US/firefox/addon/news-feed-eradicator/"
+      - browser: "edge"
+        label: "Edge"
+        url: "https://microsoftedge.microsoft.com/addons/detail/news-feed-eradicator/ioofbbepndjegkmheeehfpjcgfogmadl"
+
+  - name: "Unhook for Reddit"
+    icon: "🔴"
+    description: "Hides distracting elements (feeds, sidebars) on Reddit"
+    github: "https://github.com/mrandal/unhook-for-reddit"
+    platforms:
+      - chrome_desktop
+      - firefox_desktop
+    install: []
+
+  - name: "Social Feed Blocker"
+    icon: "🚫"
+    description: "Chrome extension to block social media feeds to improve productivity"
+    github: "https://github.com/ganganimaulik/social-feed-blocker"
+    platforms:
+      - chrome_desktop
+    install: []
+
+  - name: "Feed Remover"
+    icon: "🗑️"
+    description: "Lightweight extension to remove feeds from Facebook and YouTube"
+    github: "https://github.com/kwkr/feed-remover"
+    platforms:
+      - chrome_desktop
+      - firefox_desktop
+    install: []
+
+  - name: "Cleanup Feed"
+    icon: "🧹"
+    description: "Removes unwanted posts from Facebook News Feed based on keywords"
+    github: "https://github.com/mskian/cleanup-feed"
+    platforms:
+      - chrome_desktop
+      - firefox_desktop
+    install: []
+
+  - name: "Libredirect"
+    icon: "🔀"
+    description: "Redirects requests from mainstream platforms to privacy-respecting frontends"
+    github: "https://github.com/libredirect/libredirect"
+    platforms:
+      - firefox_desktop
+      - firefox_android
+    install:
+      - browser: "firefox"
+        label: "Firefox"
+        url: "https://addons.mozilla.org/en-US/firefox/addon/libredirect/"
